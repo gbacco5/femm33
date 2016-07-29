@@ -24,10 +24,10 @@ stator = {
   slot = {
     wso = 3, -- [mm], stator slot opening width
     hso = 1, -- [mm], stator slot opening height
-    hwed = 4, -- [mm], stator slot wedge height
+    hwed = 2, -- [mm], stator slot wedge height
     hs = 25, -- [mm], stator slot total height
     wt = 7, -- [mm], teeth width
-    shape = 'squared' -- 'squared/round/semiround/roundsemi/semiarc'
+    shape = 'round' -- 'squared/round/semiround/roundsemi/semiarc'
   },
 
   -- winding parameters
@@ -52,7 +52,7 @@ stator = {
     self.slot.wse = (self.Di + self.pos*2*self.slot.hs)*PI/self.winding.Q
           - self.slot.wt
     if self.slot.shape == 'semiround' then
-      self.slot.wse = self.slot.wse/(1 + self.pos*self.winding.Q/PI)
+      self.slot.wse = self.slot.wse/(1 + self.pos*PI/self.winding.Q)
     end
   end,
 

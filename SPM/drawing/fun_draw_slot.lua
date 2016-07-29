@@ -54,7 +54,7 @@ function draw_slot(lp)
 -- initialization -------------------------------------
 x = {}
 y = {}
--- lp.shape = 'default'
+-- lp.slot.shape = 'default'
 if lp.pos == 1 then
 	D = lp.Di 
 elseif lp.pos == -1 then
@@ -75,7 +75,7 @@ y[3] = y[2] + lp.pos*lp.slot.hwed
 
 x[4] = lp.slot.wse/2
 
-if lp.shape == "round" or lp.shape == "semiround" then
+if lp.slot.shape == "round" or lp.slot.shape == "semiround" then
 	-- thus if inner (in the iron) slot top is round
 	y[4] = D/2 + lp.pos*lp.slot.hs - lp.pos*lp.slot.wse/2
 else
@@ -92,32 +92,24 @@ clearselected()
 
 -- add wedge ------------------------------------------
 
--- try to guess join angle
--- distBC = sqrt((x[3] - x[2])^2 + (y[3] - y[2])^2)
--- try_angle = 2*asin(distBC/2/hwed)
-
-
-if lp.shape == "round"
-or lp.shape == "roundsemi"
-or lp.shape == "roundarc" then
-
-	selectsegment((x[2] + x[3])/2, (y[2] + y[3])/2)
-	deleteselectedsegments()
+if lp.slot.shape == "round"
+or lp.slot.shape == "roundsemi"
+or lp.slot.shape == "roundarc" then
 
 	if lp.pos == 1 then 
-		addarc(x[2],y[2],x[3],y[3], join_angle,1)
+		addarc(x[2],y[2],x[3],y[3], atan(lp.winding.Q/PI)/2,1)
 	elseif lp.pos == -1 then
-		addarc(x[3],y[3],x[2],y[2], join_angle,1)
+		addarc(x[3],y[3],x[2],y[2], atan(lp.winding.Q/PI)/2,1)
 	end -- of if selector
 
-elseif lp.shape == "semiround"
-		or lp.shape == "square"
-		or lp.shape == "semiarc" then
+elseif lp.slot.shape == "semiround"
+		or lp.slot.shape == "square"
+		or lp.slot.shape == "semiarc" then
 	addsegment(x[2],y[2],x[3],y[3])
 
 else
 	addsegment(x[2],y[2],x[3],y[3])
-end -- of if lp.shape
+end -- of if lp.slot.shape
 	
 
 
@@ -126,19 +118,19 @@ selectgroup(0) -- select all
 mirror(0,0,0,1) -- mirror along y axix
 
 -- close slot top -------------------------------------
-if lp.shape == "round"
-or lp.shape == "semiround" then
+if lp.slot.shape == "round"
+or lp.slot.shape == "semiround" then
 
 	addarc(lp.pos*x[4],y[4],-lp.pos*x[4],y[4],180,1)
 	clearselected()
 
-elseif lp.shape == "squared"
-or lp.shape == "roundsemi" then
+elseif lp.slot.shape == "squared"
+or lp.slot.shape == "roundsemi" then
 
 	addsegment(x[4],y[4], -x[4],y[4])
 
-elseif lp.shape == 'semiarc'
-		or lp.shape == "roundarc" then
+elseif lp.slot.shape == 'semiarc'
+		or lp.slot.shape == "roundarc" then
 
 	addnode(rotate(x[4],y[4],360/lp.winding.Q))
 	addsegment(x[4],y[4], rotate(x[4],y[4],lp.alphas))
@@ -147,7 +139,7 @@ elseif lp.shape == 'semiarc'
 
 else
 	addsegment(x[4],y[4], -x[4],y[4])
-end -- of if lp.shape
+end -- of if lp.slot.shape
 
 
 -- close copper in slot -------------------------------
