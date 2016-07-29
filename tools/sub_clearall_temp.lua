@@ -1,0 +1,11 @@
+-- remove("temp.fem")
+remove("temp.edge")
+remove("temp.ele")
+remove("temp.node")
+remove("temp.pbc")
+remove("temp.poly")
+-- keep temp.ans
+-- remove("theta_temp.txt")
+remove("temp.emf")
+remove("../temp.emf")
+remove("temp.emf")
