@@ -5,7 +5,7 @@
 -- ****************************************************
 
 username = "Giacomo"
-motor_model = tipo
+motor_model = "test"
 filename = "SPM".."_"..motor_model
 date_time = date("%Y%m%d_%H%M%S")
 
@@ -15,7 +15,7 @@ stator = {
   De = 200, -- [mm], external diameter
   Di = 125, -- [mm], internal diameter
   L = 40, -- [mm], stator stack lenght
-  p = 2, -- # of pole pairs
+  p = 3, -- # of pole pairs
   -- position of the stator
   pos = 1, -- +1 outer, -1 inner
   group = 1000,
@@ -24,10 +24,10 @@ stator = {
   slot = {
     wso = 3, -- [mm], stator slot opening width
     hso = 1, -- [mm], stator slot opening height
-    hwed = 2, -- [mm], stator slot wedge height
+    hwed = 1, -- [mm], stator slot wedge height
     hs = 25, -- [mm], stator slot total height
     wt = 7, -- [mm], teeth width
-    shape = 'squared',
+    shape = 'rounded',
     -- 'squared/rounded/
     --  round/semiround/roundsemi/
     --  semiarc/roundarc'
@@ -50,7 +50,7 @@ stator = {
     sequence = {1,-3,2,-1,3,-2}
     -- yq = self.Q/2/self.p -- winding pitch
   },
-
+  
   -- Method: compute back-iron height
   comp_hbi = function(self)
     self.hbi = (self.De - self.Di)/2 - self.slot.hs
@@ -101,6 +101,7 @@ if stator.pos == 1 then -- conventional motor, inner rotor
   else
     g = (stator.Di - rotor.De)/2
   end
+  ag_R = stator.Di/2 - g/2 -- average a-g radius
 
 elseif stator.pos == -1 then -- outer rotor
   if rotor.tipo == 'SPM' then
@@ -108,10 +109,26 @@ elseif stator.pos == -1 then -- outer rotor
   else
     g = (rotor.Di - stator.De)/2
   end
+  ag_R = rotor.Di/2 - g/2
+  
 end
 -- check whether g is negative
 if g < 0 then error('Negative air-gap lenght, g.') end
 
+gap = {
+  t = g, -- thickness
+  r = ag_R, -- radius
+  Rs = ag_R + stator.pos*1e-6, -- upper radius
+  Rr = ag_R - rotor.pos*1e-6, -- lower radius
+}
+
+
+
+-- Simulation -----------------------------------------
+sim = {
+  tipo = 'unknown',
+  poles = 2*stator.p-- 2*stator.p -- either 1,2,p,2p, where 2p --> complete
+}
 
 
 -- I/O stuff ------------------------------------------

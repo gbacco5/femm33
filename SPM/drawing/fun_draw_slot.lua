@@ -226,9 +226,9 @@ setarcsegmentprop(lp.slot.arcangle, "", 0, lp.group)  -- set arcs
 clearselected()
 
 -- bring the slot along the x-axis --------------------
--- selectgroup(lp.group)
--- moverotate(0,0,-90)
--- clearselected()
+selectgroup(lp.group)
+moverotate(0,0,-90)
+clearselected()
 
 
 end -- of function

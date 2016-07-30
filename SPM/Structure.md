@@ -3,11 +3,11 @@
 
 ## drawing
 
-### load motor data
+### motor_data
 
-### draw the stator
+### drawing/stator
 
-### draw the rotor
+### drawing/rotor
 
 ### draw the air-gap
 - common air-gap
