@@ -5,7 +5,7 @@
 -- ****************************************************
 
 username = "Giacomo"
-motor_model = "test"
+motor_model = tipo
 filename = "SPM".."_"..motor_model
 date_time = date("%Y%m%d_%H%M%S")
 
@@ -27,7 +27,19 @@ stator = {
     hwed = 2, -- [mm], stator slot wedge height
     hs = 25, -- [mm], stator slot total height
     wt = 7, -- [mm], teeth width
-    shape = 'round' -- 'squared/round/semiround/roundsemi/semiarc'
+    shape = 'squared',
+    -- 'squared/rounded/
+    --  round/semiround/roundsemi/
+    --  semiarc/roundarc'
+
+    -- if round/semiround/semiarc/roundarc
+    arcangle = 5,
+
+    -- if round/rounded/roundsemi/roundarc
+    join_angle = 30, -- input if desired
+
+    -- if rounded
+    radius = 2 -- [mm] 
   },
 
   -- winding parameters

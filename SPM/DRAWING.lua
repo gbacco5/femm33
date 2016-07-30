@@ -4,9 +4,11 @@
 -- bg @2016/07/29
 -- ****************************************************
 
+newdocument()
+
 dofile("motor_data.lua")
 
--- dofile(folder.input .. "input.lua")
+dofile(folder.inp .. "input.lua")
 
 dofile("materials.lua")
 

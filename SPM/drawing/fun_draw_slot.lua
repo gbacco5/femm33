@@ -2,38 +2,31 @@
 -- This function creates a slot and position it along
 -- the x-axis. It is general for both the stator and
 -- the rotor. The selection is made through the 
--- variable 'selector', where
---   - 1 corresponds to the stator while
---   - 2 corresponds to the rotor
--- Notice that it is assumed the stator to be outside.
--- If you want the opposite behavior, just switch the
--- selector number in the function call.
+-- variable 'lp.pos', where
+--   - +1 corresponds to outer position
+--   - -1 corresponds to the inner position
 --
 -- REQUIREMENTS:
 --   . The function 'rotate.lua' has already to be loaded
 --
 -- INPUT:
 --   . lp --> lamination part, either stator or rotor
+--			(this table contains all the necessary variables
+--			and methods)
 --
 -- OUTPUT: none
--- 
--- FUTURE IMPROVEMENTS:
---   . This function deals only with round-shaped slots
---     so it is not general. In the future it will be 
---     general and it will permit the selection of the 
---     slot type through the variable 'shape'.
 --
--- bg @2016/05/10
+-- bg @2016/08/30
 -- ....................................................
 
 
 function draw_slot(lp)
 
--- half slot drawing
+-- half slot drawing : squared case
 --
---    ---------------4
+--    ----------D----4
 --               	  /
---              	 /
+--              	 C
 --    	       	  /
 --    	      	 /
 --          	  /
@@ -52,14 +45,16 @@ function draw_slot(lp)
 --       1
 
 -- initialization -------------------------------------
-x = {}
-y = {}
--- lp.slot.shape = 'default'
+local x = {}
+local y = {}
+
+-- determine the construction diameter
 if lp.pos == 1 then
 	D = lp.Di 
 elseif lp.pos == -1 then
 	D = lp.De
 end
+
 lp:comp_ws_wse()
 lp:comp_alphas()
 
@@ -93,13 +88,19 @@ clearselected()
 -- add wedge ------------------------------------------
 
 if lp.slot.shape == "round"
+or lp.slot.shape == "rounded"
 or lp.slot.shape == "roundsemi"
 or lp.slot.shape == "roundarc" then
 
+-- join_angle = atan(lp.winding.Q/PI)/2 - lp.slot.tooth_head_angle
+join_angle = lp.slot.join_angle or atan(lp.winding.Q/PI)/2
+-- atan(lp.winding.Q/PI)/2  is kinda black magic,
+-- you better specify the join_angle
+
 	if lp.pos == 1 then 
-		addarc(x[2],y[2],x[3],y[3], atan(lp.winding.Q/PI)/2,1)
+		addarc(x[2],y[2],x[3],y[3], join_angle,1)
 	elseif lp.pos == -1 then
-		addarc(x[3],y[3],x[2],y[2], atan(lp.winding.Q/PI)/2,1)
+		addarc(x[3],y[3],x[2],y[2], join_angle,1)
 	end -- of if selector
 
 elseif lp.slot.shape == "semiround"
@@ -111,6 +112,54 @@ else
 	addsegment(x[2],y[2],x[3],y[3])
 end -- of if lp.slot.shape
 	
+-- round corners
+if lp.slot.shape == "rounded" then
+
+	local center = {}
+	center.y = y[4] - lp.pos*lp.slot.radius
+
+	if lp.pos == 1 then 
+		center.slot_angle = atan(lp.winding.Q/PI)
+	elseif lp.pos == -1 then 
+		center.slot_angle = 180 - atan(lp.winding.Q/PI)
+	end
+
+	-- local center.corner_dist = lp.slot.radius/sin(center.slot_angle/2)
+	center.m4 = lp.pos*tan(center.slot_angle/2)
+	center.q4 = y[4] - center.m4*x[4]
+	center.x = (center.y - center.q4)/center.m4
+	-- compute second point location
+	x.D = center.x
+	y.D = y[4]
+	-- compute first point location
+	center.mC = (-PI/lp.winding.Q)
+	center.qC = center.y - center.mC*center.x
+	center.mC4 = lp.winding.Q/PI
+	center.qC4 = y[4] - center.mC4*x[4]
+
+	x.C = (center.qC4 - center.qC)/(center.mC - center.mC4)
+	y.C = center.mC*x.C + center.qC
+	
+	-- delete corner point
+	selectnode(x[4],y[4])
+	deleteselectednodes()
+	clearselected()
+		-- get corner angle
+	center.angle = 180 - center.slot_angle
+	-- add corner nodes
+	addnode(x.C,y.C)
+	addnode(x.D,y.D)
+
+	-- close corner
+	if lp.pos == 1 then
+		addarc(x.C,y.C, x.D,y.D, center.angle, lp.slot.arcangle)
+	elseif lp.pos == -1 then
+		addarc(x.D,y.D, x.C,y.C, center.angle, lp.slot.arcangle)
+	end
+	
+	addsegment(x[3],y[3], x.C,y.C) -- close slot side
+
+end
 
 
 -- half slot mirroring --------------------------------
@@ -132,10 +181,17 @@ or lp.slot.shape == "roundsemi" then
 elseif lp.slot.shape == 'semiarc'
 		or lp.slot.shape == "roundarc" then
 
-	addnode(rotate(x[4],y[4],360/lp.winding.Q))
-	addsegment(x[4],y[4], rotate(x[4],y[4],lp.alphas))
-	selectarcsegment(rotate(x[4],y[4],lp.alphas/2))
-	deleteselectedarcsegments()
+	-- help node to close the top
+	hnode_x,hnode_y = rotate(x[4],y[4],lp.alphas)
+	addnode(hnode_x,hnode_y)
+	addarc(x[4],y[4], hnode_x,hnode_y, lp.alphas,1)
+	-- delete help node
+	selectnode(rotate(x[4],y[4],lp.alphas))
+	deleteselectednodes()
+	clearselected()
+
+elseif lp.slot.shape == "rounded" then
+	addsegment(x.D,y.D, -x.D,y.D)
 
 else
 	addsegment(x[4],y[4], -x[4],y[4])
@@ -165,14 +221,14 @@ selectgroup(0) -- select all
 setnodeprop("",lp.group) -- set nodes in the samee group
 setblockprop("", 0, 0, "", 0, lp.group) -- set blocks
 setsegmentprop("", 0, 0, 0, lp.group) -- set segments
-setarcsegmentprop(20, "", 0, lp.group)  -- set arcs
--- 20 has been selected for reducing the number of elements
+setarcsegmentprop(lp.slot.arcangle, "", 0, lp.group)  -- set arcs
+
 clearselected()
 
 -- bring the slot along the x-axis --------------------
-selectgroup(lp.group)
-moverotate(0,0,-90)
-clearselected()
+-- selectgroup(lp.group)
+-- moverotate(0,0,-90)
+-- clearselected()
 
 
 end -- of function

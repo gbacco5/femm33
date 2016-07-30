@@ -2,10 +2,16 @@
 
 
 ## drawing
+
 ### load motor data
+
 ### draw the stator
+
 ### draw the rotor
+
 ### draw the air-gap
+- common air-gap
+- discretised air-gap and magnet (also for radial magnetisation)
 
 
 ## analyses

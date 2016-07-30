@@ -1,7 +1,7 @@
 # femm33
 Some drawing and analysis code through FEMM 3.3
 
-## 1. motor data in tables
+## 1. motor data in tables --> OK
 
 ## 2. stator drawing
 
