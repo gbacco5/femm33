@@ -127,7 +127,8 @@ gap = {
 -- Simulation -----------------------------------------
 sim = {
   tipo = 'unknown',
-  poles = 1-- 2*stator.p -- either 1,2,p,2p, where 2p --> complete
+  poles = 1
+  -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
 }
 
 
