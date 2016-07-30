@@ -33,7 +33,7 @@ stator = {
     --  semiarc/roundarc'
 
     -- if round/semiround/semiarc/roundarc
-    arcangle = 5,
+    arcangle = 10,
 
     -- if round/rounded/roundsemi/roundarc
     join_angle = 30, -- input if desired
@@ -127,7 +127,7 @@ gap = {
 -- Simulation -----------------------------------------
 sim = {
   tipo = 'unknown',
-  poles = 2*stator.p-- 2*stator.p -- either 1,2,p,2p, where 2p --> complete
+  poles = 1-- 2*stator.p -- either 1,2,p,2p, where 2p --> complete
 }
 
 

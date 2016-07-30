@@ -10,7 +10,7 @@ dofile("motor_data.lua")
 
 dofile(folder.inp .. "input.lua")
 
-dofile("materials.lua")
+dofile("materials_and_bc.lua")
 
 dofile(folder.draw .. "stator.lua")
 

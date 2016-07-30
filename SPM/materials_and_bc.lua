@@ -13,7 +13,7 @@ mesh_pm  = 5 --> permanent magnet
 mesh_shaft = mesh_fe --> shaft
 
 -- Problem definitions --------------------------------
-probdef(0, "millimeters", "planar", 1E-8, Lstk);
+probdef(0, "millimeters", "planar", 1E-8, stator.L);
 hidegrid();
 --pause()
 
@@ -30,6 +30,7 @@ addmaterial("Magnet", 1.08, 1.08, 666800, 0, 0, 0.667, 0, 0, 1, 0);
 sigma_Cu = 0 -- [MS/m], from Alberti, to have no skin effect
 -- Rotor Aluminum
 sigma_Al_r = 15 -- [MS/m] @ 120K, from Alberti
+
 
 -- Terni Iron -- non-linear
 addmaterial("Terni",  7000, 7000, 0, 0, 0, 3, 0, 0, 1, 0);
@@ -73,5 +74,11 @@ addbhpoint("Terni", 3.000, 1335600);
 
 -- Boudary conditions
 addboundprop("Azero",0,0,0,0,0,0,0,0,0);
+
+for l = 1,5 do -- 5 should be adaptive
+  addboundprop("Az_per".. l,0,0,0,0,0,0,0,0,--...
+    0.5*(-1)^(sim.poles+1) + 4.5 )
+   -- 4 is for periodic, 5 for antiperiodic
+end
 
 -- ====================================================
