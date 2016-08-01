@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.6.26)  30 JUL 2016 14:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.30)  31 JUL 2016 10:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 5 languages loaded.
+LaTeX2e <2016/02/01>
+Babel <3.9q> and hyphenation patterns for 6 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -25,13 +25,13 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2013/12/03 3.9h The Babel package
+Package: babel 2016/02/24 3.9q The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2013/12/03 3.9h Babel common definitions
+File: babel.def 2016/02/24 3.9q Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
 )
@@ -39,7 +39,7 @@ File: babel.def 2013/12/03 3.9h Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
@@ -69,32 +69,32 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/01/03 v1.0q Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 95.
 )
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen106
 \captionmargin@=\dimen107
 \captionwidth=\dimen108
@@ -190,108 +190,151 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 28.
 
-<../SPM/examples/squared_slot.pdf, id=1, 39.30345pt x 73.91333pt>
-File: ../SPM/examples/squared_slot.pdf Graphic file (type pdf)
+<../SPM/examples/slots/squared_slot.pdf, id=1, 39.30345pt x 73.91333pt>
+File: ../SPM/examples/slots/squared_slot.pdf Graphic file (type pdf)
 
-<use ../SPM/examples/squared_slot.pdf>
-Package pdftex.def Info: ../SPM/examples/squared_slot.pdf used on input line 28
-.
+<use ../SPM/examples/slots/squared_slot.pdf>
+Package pdftex.def Info: ../SPM/examples/slots/squared_slot.pdf used on input l
+ine 28.
 (pdftex.def)             Requested size: 39.30334pt x 73.91315pt.
 
-<../SPM/examples/rounded_slot.pdf, id=2, 38.73422pt x 73.90773pt>
-File: ../SPM/examples/rounded_slot.pdf Graphic file (type pdf)
+<../SPM/examples/slots/rounded_slot.pdf, id=2, 38.73422pt x 73.90773pt>
+File: ../SPM/examples/slots/rounded_slot.pdf Graphic file (type pdf)
 
-<use ../SPM/examples/rounded_slot.pdf>
-Package pdftex.def Info: ../SPM/examples/rounded_slot.pdf used on input line 28
-.
+<use ../SPM/examples/slots/rounded_slot.pdf>
+Package pdftex.def Info: ../SPM/examples/slots/rounded_slot.pdf used on input l
+ine 28.
 (pdftex.def)             Requested size: 38.73412pt x 73.90753pt.
 
-<../SPM/examples/round_slot.pdf, id=3, 39.31654pt x 73.90094pt>
-File: ../SPM/examples/round_slot.pdf Graphic file (type pdf)
+<../SPM/examples/slots/round_slot.pdf, id=3, 39.31654pt x 73.90094pt>
+File: ../SPM/examples/slots/round_slot.pdf Graphic file (type pdf)
 
-<use ../SPM/examples/round_slot.pdf>
-Package pdftex.def Info: ../SPM/examples/round_slot.pdf used on input line 28.
+<use ../SPM/examples/slots/round_slot.pdf>
+Package pdftex.def Info: ../SPM/examples/slots/round_slot.pdf used on input lin
+e 28.
 (pdftex.def)             Requested size: 39.31644pt x 73.90074pt.
 
-<../SPM/examples/semiround_slot.pdf, id=4, 38.29865pt x 73.90422pt>
-File: ../SPM/examples/semiround_slot.pdf Graphic file (type pdf)
+<../SPM/examples/slots/semiround_slot.pdf, id=4, 38.29865pt x 73.90422pt>
+File: ../SPM/examples/slots/semiround_slot.pdf Graphic file (type pdf)
 
-<use ../SPM/examples/semiround_slot.pdf>
-Package pdftex.def Info: ../SPM/examples/semiround_slot.pdf used on input line 
-28.
+<use ../SPM/examples/slots/semiround_slot.pdf>
+Package pdftex.def Info: ../SPM/examples/slots/semiround_slot.pdf used on input
+ line 28.
 (pdftex.def)             Requested size: 38.29854pt x 73.90402pt.
 
-<../SPM/examples/roundsemi_slot.pdf, id=5, 39.29227pt x 73.91333pt>
-File: ../SPM/examples/roundsemi_slot.pdf Graphic file (type pdf)
+<../SPM/examples/slots/roundsemi_slot.pdf, id=5, 39.29227pt x 73.91333pt>
+File: ../SPM/examples/slots/roundsemi_slot.pdf Graphic file (type pdf)
 
-<use ../SPM/examples/roundsemi_slot.pdf>
-Package pdftex.def Info: ../SPM/examples/roundsemi_slot.pdf used on input line 
-28.
+<use ../SPM/examples/slots/roundsemi_slot.pdf>
+Package pdftex.def Info: ../SPM/examples/slots/roundsemi_slot.pdf used on input
+ line 28.
 (pdftex.def)             Requested size: 39.29216pt x 73.91315pt.
 
-<../SPM/examples/semiarc_slot.pdf, id=6, 39.25375pt x 74.18025pt>
-File: ../SPM/examples/semiarc_slot.pdf Graphic file (type pdf)
+<../SPM/examples/slots/semiarc_slot.pdf, id=6, 39.25375pt x 74.18025pt>
+File: ../SPM/examples/slots/semiarc_slot.pdf Graphic file (type pdf)
 
-<use ../SPM/examples/semiarc_slot.pdf>
-Package pdftex.def Info: ../SPM/examples/semiarc_slot.pdf used on input line 28
-.
+<use ../SPM/examples/slots/semiarc_slot.pdf>
+Package pdftex.def Info: ../SPM/examples/slots/semiarc_slot.pdf used on input l
+ine 28.
 (pdftex.def)             Requested size: 39.25363pt x 74.18005pt.
 
-<../SPM/examples/roundarc_slot.pdf, id=7, 39.25221pt x 74.18025pt>
-File: ../SPM/examples/roundarc_slot.pdf Graphic file (type pdf)
+<../SPM/examples/slots/roundarc_slot.pdf, id=7, 39.25221pt x 74.18025pt>
+File: ../SPM/examples/slots/roundarc_slot.pdf Graphic file (type pdf)
 
-<use ../SPM/examples/roundarc_slot.pdf>
-Package pdftex.def Info: ../SPM/examples/roundarc_slot.pdf used on input line 2
-8.
+<use ../SPM/examples/slots/roundarc_slot.pdf>
+Package pdftex.def Info: ../SPM/examples/slots/roundarc_slot.pdf used on input 
+line 28.
 (pdftex.def)             Requested size: 39.2521pt x 74.18005pt.
 
-Overfull \hbox (17.0pt too wide) in paragraph at lines 11--29
-[][] 
+Overfull \hbox (17.0pt too wide) in paragraph at lines 11--30
+[][]
  []
 
-[1
+<../SPM/examples/stators/1pole.pdf, id=8, 184.1538pt x 258.68292pt>
+File: ../SPM/examples/stators/1pole.pdf Graphic file (type pdf)
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../SPM/examples/squared_sl
-ot.pdf> <../SPM/examples/rounded_slot.pdf
+<use ../SPM/examples/stators/1pole.pdf>
+Package pdftex.def Info: ../SPM/examples/stators/1pole.pdf used on input line 3
+2.
+(pdftex.def)             Requested size: 92.07666pt x 129.34114pt.
 
-pdfTeX warning: pdflatex (file ../SPM/examples/rounded_slot.pdf): PDF inclusion
-: multiple pdfs with page group included in a single page
-> <../SPM/examples/round_slot.pdf
+<../SPM/examples/stators/2pole.pdf, id=9, 405.58517pt x 310.13544pt>
+File: ../SPM/examples/stators/2pole.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ../SPM/examples/round_slot.pdf): PDF inclusion: 
-multiple pdfs with page group included in a single page
-> <../SPM/examples/semiround_slot.pdf
+<use ../SPM/examples/stators/2pole.pdf>
+Package pdftex.def Info: ../SPM/examples/stators/2pole.pdf used on input line 3
+9.
+(pdftex.def)             Requested size: 202.79208pt x 155.06732pt.
 
-pdfTeX warning: pdflatex (file ../SPM/examples/semiround_slot.pdf): PDF inclusi
-on: multiple pdfs with page group included in a single page
-> <../SPM/examples/roundsemi_slot.pdf
+<../SPM/examples/stators/ppole.pdf, id=10, 568.79573pt x 310.12373pt>
+File: ../SPM/examples/stators/ppole.pdf Graphic file (type pdf)
 
-pdfTeX warning: pdflatex (file ../SPM/examples/roundsemi_slot.pdf): PDF inclusi
-on: multiple pdfs with page group included in a single page
-> <../SPM/examples/semiarc_slot.pdf
+<use ../SPM/examples/stators/ppole.pdf>
+Package pdftex.def Info: ../SPM/examples/stators/ppole.pdf used on input line 4
+6.
+(pdftex.def)             Requested size: 284.39717pt x 155.06148pt.
+ [1
 
-pdfTeX warning: pdflatex (file ../SPM/examples/semiarc_slot.pdf): PDF inclusion
-: multiple pdfs with page group included in a single page
-> <../SPM/examples/roundarc_slot.pdf
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../SPM/examples/slots/squa
+red_slot.pdf> <../SPM/examples/slots/rounded_slot.pdf
 
-pdfTeX warning: pdflatex (file ../SPM/examples/roundarc_slot.pdf): PDF inclusio
-n: multiple pdfs with page group included in a single page
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/slots/rounded_slot.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+> <../SPM/examples/slots/round_slot.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/slots/round_slot.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+> <../SPM/examples/slots/semiround_slot.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/slots/semiround_slot.pd
+f): PDF inclusion: multiple pdfs with page group included in a single page
+> <../SPM/examples/slots/roundsemi_slot.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/slots/roundsemi_slot.pd
+f): PDF inclusion: multiple pdfs with page group included in a single page
+> <../SPM/examples/slots/semiarc_slot.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/slots/semiarc_slot.pdf)
+: PDF inclusion: multiple pdfs with page group included in a single page
+> <../SPM/examples/slots/roundarc_slot.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/slots/roundarc_slot.pdf
+): PDF inclusion: multiple pdfs with page group included in a single page
+> <../SPM/examples/stators/1pole.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/stators/1pole.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+> <../SPM/examples/stators/2pole.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/stators/2pole.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
+>] <../SPM/examples/stators/2ppole.pdf, id=28, 569.85823pt x 569.85786pt>
+File: ../SPM/examples/stators/2ppole.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/stators/2ppole.pdf>
+Package pdftex.def Info: ../SPM/examples/stators/2ppole.pdf used on input line 
+53.
+(pdftex.def)             Requested size: 284.9284pt x 284.92822pt.
+ [2 <../SPM/examples/stators/ppole.pdf> <../SPM/examples/stators/2ppole.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/stators/2ppole.pdf): PD
+F inclusion: multiple pdfs with page group included in a single page
 >] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3425 strings out of 494976
- 51419 string characters out of 6180006
- 115037 words of memory out of 5000000
- 6623 multiletter control sequences out of 15000+600000
+ 3488 strings out of 494901
+ 52899 string characters out of 6179486
+ 118037 words of memory out of 5000000
+ 6756 multiletter control sequences out of 15000+600000
  6547 words of font info for 24 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  38i,11n,38p,230b,204s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
-pfb>
-Output written on main.pdf (1 page, 23227 bytes).
+cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (2 pages, 48541 bytes).
 PDF statistics:
- 31 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 47 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

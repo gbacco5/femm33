@@ -111,5 +111,4 @@ elseif sim.poles == 2*stator.p then -- if complete sim
 
 end -- of if
 
-
-
+-- END of file ++++++++++++++++++++++++++++++++++++++++
