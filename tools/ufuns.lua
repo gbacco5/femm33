@@ -27,6 +27,15 @@ function groupplus_select_block(gp, Q)
 end
 
 
+function copy_table(t)
+	v = {}
+	for ind, val in t do
+		v[ind] = val
+	end
+	return v
+end
+
+
 alphabet = {'a','b','c','d','e','f','g','h','i',
 			'j','k','l','m','n','o','p','q','r',
 			's','t','u','v','w','x','y','z'}

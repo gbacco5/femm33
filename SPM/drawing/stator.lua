@@ -1,7 +1,7 @@
 -- STATOR.lua +++++++++++++++++++++++++++++++++++++++++
 -- This file start the drawing of the stator.
 --
--- bg @2016/07/30
+-- bg, 2016/08/01
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 -- load functions -------------------------------------
@@ -13,9 +13,9 @@ draw_slot(stator)
 
 -- stator closing diameter ----------------------------
 if stator.pos == 1 then -- conventional motor
-  stator.Dclose = stator.De
-elseif stator.pos == -1 then -- conventional motor
-  stator.Dclose = stator.Di
+  stator.Dbound = stator.De
+elseif stator.pos == -1 then -- outer rotor
+  stator.Dbound = stator.Di
 end
 
 -- copy slots -----------------------------------------
@@ -41,8 +41,8 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   -- add stator closing
   back = {}
   back.s1,back.s2 = {},{}
-  back.s1.x,back.s1.y = rotate(stator.Dclose/2,0, -stator.alphas/2)
-  back.s2.x, back.s2.y = rotate(stator.Dclose/2,0, -- ...
+  back.s1.x,back.s1.y = rotate(stator.Dbound/2,0, -stator.alphas/2)
+  back.s2.x, back.s2.y = rotate(stator.Dbound/2,0, -- ...
     stator.alphas*(2*stator.p*sim.poles - 1/2) )
   addnode(back.s1.x,back.s1.y)
   addnode(back.s2.x,back.s2.y)
@@ -81,7 +81,7 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   clearselected()
   
   -- back
-  selectarcsegment(stator.Dclose/2,0)
+  selectarcsegment(stator.Dbound/2,0)
   setarcsegmentprop(5,"Azero",0,stator.group)
   clearselected()
 
@@ -103,8 +103,8 @@ elseif sim.poles == 2*stator.p then -- if complete sim
   clearselected()
   
   -- set B.C. -----------------------------------------
-  selectarcsegment(0, stator.Dclose/2)
-  selectarcsegment(0,-stator.Dclose/2)
+  selectarcsegment(0, stator.Dbound/2)
+  selectarcsegment(0,-stator.Dbound/2)
   setarcsegmentprop(5,"Azero",0,stator.group)
   clearselected()
 

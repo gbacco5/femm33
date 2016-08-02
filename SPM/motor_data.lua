@@ -1,5 +1,6 @@
 -- MOTOR_DATA.lua *************************************
 -- This file start the drawing of the motor.
+-- '?!' options have already to be implemented.
 --
 -- bg @2016/07/29
 -- ****************************************************
@@ -8,6 +9,24 @@ username = "Giacomo"
 motor_model = "test"
 filename = "SPM".."_"..motor_model
 date_time = date("%Y%m%d_%H%M%S")
+
+-- I/O stuff ------------------------------------------
+folder = {
+  tools = '..\\tools\\',
+  draw = '.\\drawing\\',
+  sim = '.\\simulation\\',
+  out = '.\\output\\',
+  inp = '.\\input\\'
+}
+
+fn = {
+  all = 'results'..date_time..'out',
+  sett = 'settings'
+}
+
+dofile(folder.tools .. "ufuns.lua")
+
+
 
 -- Stator ---------------------------------------------
 stator = {
@@ -53,7 +72,14 @@ stator = {
   
   -- Method: compute back-iron height
   comp_hbi = function(self)
-    self.hbi = (self.De - self.Di)/2 - self.slot.hs
+  -- to perform the computation even in the absence of slot
+  local decrease
+  if self.slot == nil then 
+    decrease = 0
+  else
+    decrease = self.slot.hs
+  end
+    self.hbi = (self.De - self.Di)/2 - decrease
   end,
 
   -- Method: compute remaining slot parameters
@@ -77,22 +103,32 @@ stator = {
 
 
 -- Rotor ----------------------------------------------
-rotor = stator
-rotor = {
-  tipo = 'SPM',
-  group = 10,
-  -- magnet
-  magnet = {
-    h = 5, -- [mm], magnet height
-    ang_e = 75 --[el°], magnet electrical angle span
-  },
+-- the rotor table uses the stator one as a template.
+-- we cannot simply do  rotor = stator, otherwise both
+-- of them would reference to the same table.
+rotor = copy_table(stator)
 
-  De = 113, -- [mm], external diameter
-  Di = 60, -- [mm], internal diameter
-  pos = -stator.pos, -- opposite position than the stator
-  slot = nil, -- no slots
-  winding = nil -- no winding
+-- unfortunately we have to reference each label
+-- individually, otherwise we would overwrite the table.
+rotor.tipo = 'SPM'
+rotor.group = 10
+
+rotor.magnet = {
+  -- magnetisation direction
+  mgtz = 'parallel', -- 'parallel'/'?!radial'
+  shape = 'rect', -- 'rect'/'?!trapz'/'?!sin'
+  h = 5, -- [mm], magnet height
+  ang_e = 75 --[el°], magnet half electrical angle span
 }
+
+rotor.De = 113 -- [mm], external diameter
+rotor.Di = 60 -- [mm], internal diameter
+rotor.pos = -stator.pos -- opposite position than the stator
+rotor.slot = nil -- no slots
+rotor.winding = nil -- no winding
+rotor.ws_wse = nil -- delete useless method
+rotor.comp_alphas = nil -- delete useless method
+
 
 -- Air-gap --------------------------------------------
 if stator.pos == 1 then -- conventional motor, inner rotor
@@ -126,22 +162,18 @@ gap = {
 
 -- Simulation -----------------------------------------
 sim = {
-  tipo = 'unknown',
+  tipo = '?!unknown',
   poles = 1
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
 }
 
 
--- I/O stuff ------------------------------------------
-folder = {
-  tools = '..\\tools\\',
-  draw = '.\\drawing\\',
-  sim = '.\\simulation\\',
-  out = '.\\output\\',
-  inp = '.\\input\\'
-}
 
-fn = {
-  all = 'results'..date_time..'out',
-  sett = 'settings'
-}
+-- magnet shapes. 'Rectified' view
+--         _________
+-- trapz   \_______/
+--         _________
+-- rect   |_________|
+--            ___ 
+--         _--   --_
+-- sin    |_________|
