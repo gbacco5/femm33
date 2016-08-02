@@ -4,8 +4,11 @@
 -- bg, 2016/08/01
 -- ****************************************************
 
-newdocument()
+iDraw = 1
 
+while iDraw == 1 do
+
+newdocument()
 
 -- load DATA ******************************************
 dofile("motor_data.lua")
@@ -28,6 +31,10 @@ dofile(folder.draw .. "rotor.lua")
 
 
 zoomnatural()
+
+wait(10)
+
+end
 
 -- SAVE ***********************************************
 savefemmfile(filename .. ".fem")

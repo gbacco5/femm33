@@ -25,6 +25,7 @@ fn = {
 }
 
 dofile(folder.tools .. "ufuns.lua")
+dofile(folder.tools .. "wait.lua")
 
 
 
@@ -34,7 +35,7 @@ stator = {
   De = 200, -- [mm], external diameter
   Di = 125, -- [mm], internal diameter
   L = 40, -- [mm], stator stack lenght
-  p = 3, -- # of pole pairs
+  p = 4, -- # of pole pairs
   -- position of the stator
   pos = 1, -- +1 outer, -1 inner
   group = 1000,
@@ -102,6 +103,7 @@ stator = {
 }
 
 
+
 -- Rotor ----------------------------------------------
 -- the rotor table uses the stator one as a template.
 -- we cannot simply do  rotor = stator, otherwise both
@@ -122,12 +124,15 @@ rotor.magnet = {
 }
 
 rotor.De = 113 -- [mm], external diameter
-rotor.Di = 60 -- [mm], internal diameter
+rotor.Di = 40 -- [mm], internal diameter
 rotor.pos = -stator.pos -- opposite position than the stator
+rotor.arcangle = 1 -- maximum discretisation angle
+
 rotor.slot = nil -- no slots
 rotor.winding = nil -- no winding
 rotor.ws_wse = nil -- delete useless method
 rotor.comp_alphas = nil -- delete useless method
+
 
 
 -- Air-gap --------------------------------------------
@@ -163,7 +168,7 @@ gap = {
 -- Simulation -----------------------------------------
 sim = {
   tipo = '?!unknown',
-  poles = 1
+  poles = stator.p
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
 }
 

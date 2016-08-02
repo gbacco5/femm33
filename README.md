@@ -3,7 +3,7 @@ Some drawing and analysis code through FEMM 3.3
 
 ## 1. motor data in tables --> OK
 
-## 2. stator drawing
+## 2. stator drawing --> OK
 
 ## 3. SPM rotor drawing
 

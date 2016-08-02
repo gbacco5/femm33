@@ -29,12 +29,14 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   -- select first arc
   selectarcsegment(rotate(gap.Rs,0, -stator.alphas/2))
   -- copy it at the end
-  copyrotate(0,0,stator.alphas*2*stator.p*sim.poles, 1)
+  copyrotate(0,0,--...
+    stator.alphas*(stator.winding.Q/2/stator.p*sim.poles), 1)
+
   -- add gap nodes
   gap.s1, gap.s2 = {},{}
   gap.s1.x, gap.s1.y = rotate(gap.Rs,0, -stator.alphas/2)
   gap.s2.x, gap.s2.y = rotate(gap.Rs,0, -- ...
-    stator.alphas*(2*stator.p*sim.poles - 1/2) )
+    stator.alphas*(stator.winding.Q/2/stator.p*sim.poles - 1/2) )
   addnode(gap.s1.x, gap.s1.y)
   addnode(gap.s2.x, gap.s2.y)
   
@@ -43,7 +45,7 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   back.s1,back.s2 = {},{}
   back.s1.x,back.s1.y = rotate(stator.Dbound/2,0, -stator.alphas/2)
   back.s2.x, back.s2.y = rotate(stator.Dbound/2,0, -- ...
-    stator.alphas*(2*stator.p*sim.poles - 1/2) )
+    stator.alphas*(stator.winding.Q/2/stator.p*sim.poles - 1/2) )
   addnode(back.s1.x,back.s1.y)
   addnode(back.s2.x,back.s2.y)
   -- add lateral segments
@@ -52,7 +54,7 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   -- delete construction points
   selectnode(rotate(gap.Rs,0, -stator.alphas))
   selectnode(rotate(gap.Rs,0, --...
-    stator.alphas*2*stator.p*sim.poles))
+    stator.alphas*(stator.winding.Q/2/stator.p*sim.poles)))
   deleteselectednodes()
   clearselected()
   -- close stator
