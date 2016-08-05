@@ -68,14 +68,6 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   addarc(back.r1.x,back.r1.y, back.r2.x,back.r2.y, --...
     sim.poles*180/stator.p, 5)
 
-  -- assign everything rotor to rotor group -----------
-  selectgroup(0) -- select all
-  setnodeprop("",rotor.group) -- set nodes in group
-  setblockprop("", 0, 0, "", 0, rotor.group) -- set blocks
-  setsegmentprop("", 0, 0, 0, rotor.group) -- set segments
-  setarcsegmentprop(5, "", 0, rotor.group)  -- set arcs
-  clearselected()
-
   -- set B.C. -----------------------------------------
   -- 1st segment
   selectsegment(back.r1.x,back.r1.y)
@@ -95,14 +87,56 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   clearselected()
 
   -- magnet orientation adjustment --------------------
-  for mm = 2,sim.poles,2 do
-    local angle = (mm - 1)*180/rotor.p
-    local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
-      angle)
+  if rotor.magnet then -- if rotor has magnet
+    for mm = 2,sim.poles,2 do
+      -- for even magnets, the 1st (d-axis) is a North
+      local angle = (mm - 1)*180/rotor.p
+      local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
+        angle)
 
-    selectlabel(mag_x, mag_y)
-    setblockprop("Magnet",1,0,"",angle+180,rotor.group)
-    clearselected()
+      selectlabel(mag_x, mag_y)
+      setblockprop(rotor.magnet.material,--...
+        1,0,"",angle+180,rotor.group)
+      clearselected()
+    end
   end
 
+elseif sim.poles == 2*rotor.p then -- if complete sim
+  -- add rotor back-iron
+  addnode( rotor.Dbound/2,0)
+  addnode(-rotor.Dbound/2,0)
+  addarc( rotor.Dbound/2,0,-rotor.Dbound/2,0,180,1)
+  addarc(-rotor.Dbound/2,0, rotor.Dbound/2,0,180,1)
+
+  -- add shaft "material"
+  local shaft_block = {}
+  shaft_block.x, shaft_block.y = (rotor.Dbound)/4, 0
+  addblocklabel( shaft_block.x, shaft_block.y )
+  selectlabel( shaft_block.x, shaft_block.y )
+  setblockprop(shaft.material,1,0,"",0,rotor.group)
+  clearselected()
+  
+  -- set B.C. -----------------------------------------
+  selectarcsegment(0, rotor.Dbound/2)
+  selectarcsegment(0,-rotor.Dbound/2)
+  setarcsegmentprop(5,"Azero",0,rotor.group)
+  clearselected()
+
 end
+
+
+-- add rotor material
+local rot_block = {}
+rot_block.x, rot_block.y = (rotor.De + rotor.Di)/4, 0
+addblocklabel( rot_block.x, rot_block.y )
+selectlabel( rot_block.x, rot_block.y )
+setblockprop(rotor.material,1,0,"",0,rotor.group)
+clearselected()
+
+-- assign everything rotor to rotor group -------------
+selectgroup(0) -- select all
+setnodeprop("",rotor.group) -- set nodes in group
+setblockprop("", 0, 0, "", 0, rotor.group) -- set blocks
+setsegmentprop("", 0, 0, 0, rotor.group) -- set segments
+setarcsegmentprop(5, "", 0, rotor.group)  -- set arcs
+clearselected()

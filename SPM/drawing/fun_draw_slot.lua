@@ -119,9 +119,9 @@ if lp.slot.shape == "rounded" then
 	center.y = y[4] - lp.pos*lp.slot.radius
 
 	if lp.pos == 1 then 
-		center.slot_angle = atan(lp.winding.Q/PI)
+		center.slot_angle = atan(2*lp.winding.Q/PI)
 	elseif lp.pos == -1 then 
-		center.slot_angle = 180 - atan(lp.winding.Q/PI)
+		center.slot_angle = 180 - atan(2*lp.winding.Q/PI)
 	end
 
 	-- local center.corner_dist = lp.slot.radius/sin(center.slot_angle/2)
@@ -132,9 +132,9 @@ if lp.slot.shape == "rounded" then
 	x.D = center.x
 	y.D = y[4]
 	-- compute first point location
-	center.mC = (-PI/lp.winding.Q)
+	center.mC = (-PI/2/lp.winding.Q)
 	center.qC = center.y - center.mC*center.x
-	center.mC4 = lp.winding.Q/PI
+	center.mC4 = 2*lp.winding.Q/PI
 	center.qC4 = y[4] - center.mC4*x[4]
 
 	x.C = (center.qC4 - center.qC)/(center.mC - center.mC4)

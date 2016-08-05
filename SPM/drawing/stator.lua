@@ -60,15 +60,7 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   -- close stator
   addarc(back.s1.x,back.s1.y, back.s2.x,back.s2.y, --...
     360*sim.poles/2/stator.p, 5)
-  
-  -- assign everything stator to stator group -----------
-  selectgroup(0) -- select all
-  setnodeprop("",stator.group) -- set nodes in group
-  setblockprop("", 0, 0, "", 0, stator.group) -- set blocks
-  setsegmentprop("", 0, 0, 0, stator.group) -- set segments
-  setarcsegmentprop(1, "", 0, stator.group)  -- set arcs
-  clearselected()
-      
+       
   -- set B.C. -----------------------------------------
   -- 1st segment
   selectsegment(back.s1.x,back.s1.y)
@@ -91,19 +83,11 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
 
 elseif sim.poles == 2*stator.p then -- if complete sim
   -- add stator back-iron
-  addnode( stator.De/2,0)
-  addnode(-stator.De/2,0)
-  addarc( stator.De/2,0,-stator.De/2,0,180,1)
-  addarc(-stator.De/2,0, stator.De/2,0,180,1)
-  
-  -- assign everything stator to stator group -----------
-  selectgroup(0) -- select all
-  setnodeprop("",stator.group) -- set nodes in group
-  setblockprop("", 0, 0, "", 0, stator.group) -- set blocks
-  setsegmentprop("", 0, 0, 0, stator.group) -- set segments
-  setarcsegmentprop(1, "", 0, stator.group)  -- set arcs
-  clearselected()
-  
+  addnode( stator.Dbound/2,0)
+  addnode(-stator.Dbound/2,0)
+  addarc( stator.Dbound/2,0,-stator.Dbound/2,0,180,1)
+  addarc(-stator.Dbound/2,0, stator.Dbound/2,0,180,1)
+   
   -- set B.C. -----------------------------------------
   selectarcsegment(0, stator.Dbound/2)
   selectarcsegment(0,-stator.Dbound/2)
@@ -112,5 +96,23 @@ elseif sim.poles == 2*stator.p then -- if complete sim
 
 
 end -- of if
+
+-- add stator material
+stator:comp_hbi() -- compute back-iron height
+local stat_block = {}
+stat_block.x, stat_block.y = --...
+  stator.Dbound/2 - stator.pos*stator.hbi/2, 0
+addblocklabel( stat_block.x, stat_block.y )
+selectlabel( stat_block.x, stat_block.y )
+setblockprop(stator.material,1,0,"",0,stator.group)
+clearselected()
+
+-- assign everything stator to stator group -----------
+selectgroup(0) -- select all
+setnodeprop("",stator.group) -- set nodes in group
+setblockprop("", 0, 0, "", 0, stator.group) -- set blocks
+setsegmentprop("", 0, 0, 0, stator.group) -- set segments
+setarcsegmentprop(1, "", 0, stator.group)  -- set arcs
+clearselected()
 
 -- END of file ++++++++++++++++++++++++++++++++++++++++

@@ -35,10 +35,11 @@ stator = {
   De = 200, -- [mm], external diameter
   Di = 125, -- [mm], internal diameter
   L = 40, -- [mm], stator stack lenght
-  p = 4, -- # of pole pairs
+  p = 3, -- # of pole pairs
   -- position of the stator
   pos = 1, -- +1 outer, -1 inner
   group = 1000,
+  material = 'Iron',
 
   -- slot parameters
   slot = {
@@ -53,7 +54,7 @@ stator = {
     --  semiarc/roundarc'
 
     -- if round/semiround/semiarc/roundarc
-    arcangle = 10,
+    arcangle = 20,
 
     -- if round/rounded/roundsemi/roundarc
     join_angle = 30, -- input if desired
@@ -117,8 +118,9 @@ rotor.group = 10
 
 rotor.magnet = {
   -- magnetisation direction
+  material = 'Magnet', -- magnet material
   mgtz = 'parallel', -- 'parallel'/'?!radial'
-  shape = 'rect', -- 'rect'/'?!trapz'/'?!sin'
+  shape = 'trapz', -- 'rect'/'trapz'/'?!sin'
   h = 5, -- [mm], magnet height
   ang_e = 75 --[el°], magnet half electrical angle span
 }
@@ -133,6 +135,7 @@ rotor.winding = nil -- no winding
 rotor.ws_wse = nil -- delete useless method
 rotor.comp_alphas = nil -- delete useless method
 
+shaft = {material = '<No Mesh>'}
 
 
 -- Air-gap --------------------------------------------
@@ -168,7 +171,7 @@ gap = {
 -- Simulation -----------------------------------------
 sim = {
   tipo = '?!unknown',
-  poles = stator.p
+  poles = 1
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
 }
 
