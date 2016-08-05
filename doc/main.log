@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.30)  31 JUL 2016 10:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.7.30)  5 AUG 2016 20:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -184,34 +184,34 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 28.
+(Font)              <10.95> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 28.
+(Font)              <8> on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 28.
+(Font)              <6> on input line 30.
 
 <../SPM/examples/slots/squared_slot.pdf, id=1, 39.30345pt x 73.91333pt>
 File: ../SPM/examples/slots/squared_slot.pdf Graphic file (type pdf)
 
 <use ../SPM/examples/slots/squared_slot.pdf>
 Package pdftex.def Info: ../SPM/examples/slots/squared_slot.pdf used on input l
-ine 28.
+ine 30.
 (pdftex.def)             Requested size: 39.30334pt x 73.91315pt.
 
-<../SPM/examples/slots/rounded_slot.pdf, id=2, 38.73422pt x 73.90773pt>
+<../SPM/examples/slots/rounded_slot.pdf, id=2, 38.9993pt x 73.89633pt>
 File: ../SPM/examples/slots/rounded_slot.pdf Graphic file (type pdf)
 
 <use ../SPM/examples/slots/rounded_slot.pdf>
 Package pdftex.def Info: ../SPM/examples/slots/rounded_slot.pdf used on input l
-ine 28.
-(pdftex.def)             Requested size: 38.73412pt x 73.90753pt.
+ine 30.
+(pdftex.def)             Requested size: 38.99919pt x 73.89613pt.
 
 <../SPM/examples/slots/round_slot.pdf, id=3, 39.31654pt x 73.90094pt>
 File: ../SPM/examples/slots/round_slot.pdf Graphic file (type pdf)
 
 <use ../SPM/examples/slots/round_slot.pdf>
 Package pdftex.def Info: ../SPM/examples/slots/round_slot.pdf used on input lin
-e 28.
+e 30.
 (pdftex.def)             Requested size: 39.31644pt x 73.90074pt.
 
 <../SPM/examples/slots/semiround_slot.pdf, id=4, 38.29865pt x 73.90422pt>
@@ -219,7 +219,7 @@ File: ../SPM/examples/slots/semiround_slot.pdf Graphic file (type pdf)
 
 <use ../SPM/examples/slots/semiround_slot.pdf>
 Package pdftex.def Info: ../SPM/examples/slots/semiround_slot.pdf used on input
- line 28.
+ line 30.
 (pdftex.def)             Requested size: 38.29854pt x 73.90402pt.
 
 <../SPM/examples/slots/roundsemi_slot.pdf, id=5, 39.29227pt x 73.91333pt>
@@ -227,7 +227,7 @@ File: ../SPM/examples/slots/roundsemi_slot.pdf Graphic file (type pdf)
 
 <use ../SPM/examples/slots/roundsemi_slot.pdf>
 Package pdftex.def Info: ../SPM/examples/slots/roundsemi_slot.pdf used on input
- line 28.
+ line 30.
 (pdftex.def)             Requested size: 39.29216pt x 73.91315pt.
 
 <../SPM/examples/slots/semiarc_slot.pdf, id=6, 39.25375pt x 74.18025pt>
@@ -235,7 +235,7 @@ File: ../SPM/examples/slots/semiarc_slot.pdf Graphic file (type pdf)
 
 <use ../SPM/examples/slots/semiarc_slot.pdf>
 Package pdftex.def Info: ../SPM/examples/slots/semiarc_slot.pdf used on input l
-ine 28.
+ine 30.
 (pdftex.def)             Requested size: 39.25363pt x 74.18005pt.
 
 <../SPM/examples/slots/roundarc_slot.pdf, id=7, 39.25221pt x 74.18025pt>
@@ -243,36 +243,8 @@ File: ../SPM/examples/slots/roundarc_slot.pdf Graphic file (type pdf)
 
 <use ../SPM/examples/slots/roundarc_slot.pdf>
 Package pdftex.def Info: ../SPM/examples/slots/roundarc_slot.pdf used on input 
-line 28.
+line 30.
 (pdftex.def)             Requested size: 39.2521pt x 74.18005pt.
-
-Overfull \hbox (17.0pt too wide) in paragraph at lines 11--30
-[][]
- []
-
-<../SPM/examples/stators/1pole.pdf, id=8, 184.1538pt x 258.68292pt>
-File: ../SPM/examples/stators/1pole.pdf Graphic file (type pdf)
-
-<use ../SPM/examples/stators/1pole.pdf>
-Package pdftex.def Info: ../SPM/examples/stators/1pole.pdf used on input line 3
-2.
-(pdftex.def)             Requested size: 92.07666pt x 129.34114pt.
-
-<../SPM/examples/stators/2pole.pdf, id=9, 405.58517pt x 310.13544pt>
-File: ../SPM/examples/stators/2pole.pdf Graphic file (type pdf)
-
-<use ../SPM/examples/stators/2pole.pdf>
-Package pdftex.def Info: ../SPM/examples/stators/2pole.pdf used on input line 3
-9.
-(pdftex.def)             Requested size: 202.79208pt x 155.06732pt.
-
-<../SPM/examples/stators/ppole.pdf, id=10, 568.79573pt x 310.12373pt>
-File: ../SPM/examples/stators/ppole.pdf Graphic file (type pdf)
-
-<use ../SPM/examples/stators/ppole.pdf>
-Package pdftex.def Info: ../SPM/examples/stators/ppole.pdf used on input line 4
-6.
-(pdftex.def)             Requested size: 284.39717pt x 155.06148pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../SPM/examples/slots/squa
@@ -300,41 +272,138 @@ pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/slots/semiarc_slot.pdf)
 
 pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/slots/roundarc_slot.pdf
 ): PDF inclusion: multiple pdfs with page group included in a single page
-> <../SPM/examples/stators/1pole.pdf
+>] <../SPM/examples/stators/1pole.pdf, id=24, 184.1538pt x 258.68292pt>
+File: ../SPM/examples/stators/1pole.pdf Graphic file (type pdf)
 
-pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/stators/1pole.pdf): PDF
- inclusion: multiple pdfs with page group included in a single page
-> <../SPM/examples/stators/2pole.pdf
+<use ../SPM/examples/stators/1pole.pdf>
+Package pdftex.def Info: ../SPM/examples/stators/1pole.pdf used on input line 3
+8.
+(pdftex.def)             Requested size: 138.11499pt x 194.0117pt.
+
+<../SPM/examples/stators/2pole.pdf, id=25, 405.58517pt x 310.13544pt>
+File: ../SPM/examples/stators/2pole.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/stators/2pole.pdf>
+Package pdftex.def Info: ../SPM/examples/stators/2pole.pdf used on input line 4
+5.
+(pdftex.def)             Requested size: 304.18813pt x 232.60098pt.
+
+<../SPM/examples/stators/ppole.pdf, id=26, 568.79573pt x 310.12373pt>
+File: ../SPM/examples/stators/ppole.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/stators/ppole.pdf>
+Package pdftex.def Info: ../SPM/examples/stators/ppole.pdf used on input line 5
+2.
+(pdftex.def)             Requested size: 426.59575pt x 232.59222pt.
+
+Overfull \hbox (95.59575pt too wide) in paragraph at lines 51--57
+[][]
+ []
+
+[2 <../SPM/examples/stators/1pole.pdf> <../SPM/examples/stators/2pole.pdf
 
 pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/stators/2pole.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
->] <../SPM/examples/stators/2ppole.pdf, id=28, 569.85823pt x 569.85786pt>
+>] <../SPM/examples/stators/2ppole.pdf, id=33, 569.85823pt x 569.85786pt>
 File: ../SPM/examples/stators/2ppole.pdf Graphic file (type pdf)
 
 <use ../SPM/examples/stators/2ppole.pdf>
 Package pdftex.def Info: ../SPM/examples/stators/2ppole.pdf used on input line 
-53.
-(pdftex.def)             Requested size: 284.9284pt x 284.92822pt.
- [2 <../SPM/examples/stators/ppole.pdf> <../SPM/examples/stators/2ppole.pdf
+59.
+(pdftex.def)             Requested size: 427.39261pt x 427.39233pt.
 
-pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/stators/2ppole.pdf): PD
-F inclusion: multiple pdfs with page group included in a single page
+Overfull \hbox (96.39261pt too wide) in paragraph at lines 58--64
+[][] 
+ []
+
+[3 <../SPM/examples/stators/ppole.pdf>] [4 <../SPM/examples/stators/2ppole.pdf>
+] <../SPM/examples/magnets/parallel_rect.pdf, id=45, 161.57098pt x 36.56966pt>
+File: ../SPM/examples/magnets/parallel_rect.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/magnets/parallel_rect.pdf>
+Package pdftex.def Info: ../SPM/examples/magnets/parallel_rect.pdf used on inpu
+t line 72.
+(pdftex.def)             Requested size: 161.57059pt x 36.56955pt.
+
+<../SPM/examples/magnets/parallel_trapz.pdf, id=46, 161.57098pt x 36.56966pt>
+File: ../SPM/examples/magnets/parallel_trapz.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/magnets/parallel_trapz.pdf>
+Package pdftex.def Info: ../SPM/examples/magnets/parallel_trapz.pdf used on inp
+ut line 80.
+(pdftex.def)             Requested size: 161.57059pt x 36.56955pt.
+
+<../SPM/examples/magnets/radial_trapz.pdf, id=47, 161.57098pt x 36.56976pt>
+File: ../SPM/examples/magnets/radial_trapz.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/magnets/radial_trapz.pdf>
+Package pdftex.def Info: ../SPM/examples/magnets/radial_trapz.pdf used on input
+ line 88.
+(pdftex.def)             Requested size: 161.57059pt x 36.56966pt.
+ [5 <../SPM/examples/magnets/parallel_rect.pdf> <../SPM/examples/magnets/parall
+el_trapz.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/magnets/parallel_trapz.
+pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../SPM/examples/magnets/radial_trapz.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/magnets/radial_trapz.pd
+f): PDF inclusion: multiple pdfs with page group included in a single page
+>] <../SPM/examples/rotors/1pole.pdf, id=55, 126.51079pt x 177.21585pt>
+File: ../SPM/examples/rotors/1pole.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/rotors/1pole.pdf>
+Package pdftex.def Info: ../SPM/examples/rotors/1pole.pdf used on input line 10
+0.
+(pdftex.def)             Requested size: 94.88284pt x 132.91154pt.
+
+<../SPM/examples/rotors/2pole.pdf, id=56, 175.79318pt x 265.42221pt>
+File: ../SPM/examples/rotors/2pole.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/rotors/2pole.pdf>
+Package pdftex.def Info: ../SPM/examples/rotors/2pole.pdf used on input line 10
+7.
+(pdftex.def)             Requested size: 131.84454pt x 199.06616pt.
+
+<../SPM/examples/rotors/ppole.pdf, id=57, 328.56544pt x 263.3337pt>
+File: ../SPM/examples/rotors/ppole.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/rotors/ppole.pdf>
+Package pdftex.def Info: ../SPM/examples/rotors/ppole.pdf used on input line 11
+4.
+(pdftex.def)             Requested size: 246.42348pt x 197.49977pt.
+ [6 <../SPM/examples/rotors/1pole.pdf> <../SPM/examples/rotors/2pole.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/rotors/2pole.pdf): PDF 
+inclusion: multiple pdfs with page group included in a single page
+>] <../SPM/examples/rotors/2ppole.pdf, id=64, 350.77191pt x 349.45154pt>
+File: ../SPM/examples/rotors/2ppole.pdf Graphic file (type pdf)
+
+<use ../SPM/examples/rotors/2ppole.pdf>
+Package pdftex.def Info: ../SPM/examples/rotors/2ppole.pdf used on input line 1
+21.
+(pdftex.def)             Requested size: 263.07828pt x 262.08801pt.
+ [7 <../SPM/examples/rotors/ppole.pdf> <../SPM/examples/rotors/2ppole.pdf
+
+pdfTeX warning: /usr/bin/pdflatex (file ../SPM/examples/rotors/2ppole.pdf): PDF
+ inclusion: multiple pdfs with page group included in a single page
 >] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3488 strings out of 494901
- 52899 string characters out of 6179486
- 118037 words of memory out of 5000000
- 6756 multiletter control sequences out of 15000+600000
- 6547 words of font info for 24 fonts, out of 8000000 for 9000
+ 3525 strings out of 494901
+ 54198 string characters out of 6179486
+ 117037 words of memory out of 5000000
+ 6786 multiletter control sequences out of 15000+600000
+ 7152 words of font info for 26 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,11n,38p,230b,204s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,38p,230b,208s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (2 pages, 48541 bytes).
+cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (7 pages, 103072 bytes).
 PDF statistics:
- 47 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 55 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

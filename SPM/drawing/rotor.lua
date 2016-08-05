@@ -1,7 +1,7 @@
 -- ROTOR.lua ++++++++++++++++++++++++++++++++++++++++++
 -- This file start the drawing of the rotor.
 --
--- bg, 2016/08/01
+-- bg, 2016/08/05
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
@@ -21,7 +21,7 @@ end
 
 -- if SPM (motor of interest) -------------------------
 if rotor.tipo == 'SPM' then 
-  dofile(folder.draw .. "SPM_rotor.lua")
+  dofile(folder.draw .. "SPM_rotor_2.lua")
 end
 
 
@@ -86,20 +86,6 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   setarcsegmentprop(5,"Azero",0,rotor.group)
   clearselected()
 
-  -- magnet orientation adjustment --------------------
-  if rotor.magnet then -- if rotor has magnet
-    for mm = 2,sim.poles,2 do
-      -- for even magnets, the 1st (d-axis) is a North
-      local angle = (mm - 1)*180/rotor.p
-      local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
-        angle)
-
-      selectlabel(mag_x, mag_y)
-      setblockprop(rotor.magnet.material,--...
-        1,0,"",angle+180,rotor.group)
-      clearselected()
-    end
-  end
 
 elseif sim.poles == 2*rotor.p then -- if complete sim
   -- add rotor back-iron
@@ -122,6 +108,78 @@ elseif sim.poles == 2*rotor.p then -- if complete sim
   setarcsegmentprop(5,"Azero",0,rotor.group)
   clearselected()
 
+end
+
+
+-- magnet orientation adjustment --------------------
+if rotor.magnet then -- if rotor has magnet
+
+  if rotor.magnet.mgtz == 'parallel' then
+    for mm = 2,sim.poles,2 do
+      -- for even magnets, the 1st (d-axis) is a North
+      local angle = (mm - 1)*180/rotor.p
+      local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
+        angle)
+
+      selectlabel(mag_x, mag_y)
+      setblockprop(rotor.magnet.material,--...
+        1,0,"",angle+180,rotor.group)
+      clearselected()
+    end
+  
+  elseif rotor.magnet.mgtz == 'radial' then
+    for mm = 2,sim.poles,2 do
+      -- for even magnets, the 1st (d-axis) is a North
+      local angle = (mm - 1)*180/rotor.p
+
+      -- 1st magnet half
+      for ns = 1,rotor.magnet.segments do
+        local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
+          angle - rotor.magnet.ang_e/rotor.p + sim.dth/2 + --....
+          (ns-1)*sim.dth )
+        local mag_dir
+
+        if mag_x < 0 then
+          mag_dir = atan(mag_y/mag_x)
+        else
+          mag_dir = atan(mag_y/mag_x) + 180
+        end
+
+        selectlabel(mag_x, mag_y)
+        setblockprop(rotor.magnet.material,--...
+          1,0,"", mag_dir, rotor.group)
+        clearselected()
+      end
+      -- 2nd magnet half
+      for ns = 1,rotor.magnet.segments do
+        local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
+          angle + rotor.magnet.ang_e/rotor.p - sim.dth/2 - --....
+          (ns-1)*sim.dth )
+        local mag_dir
+        
+        if mag_x < 0 then
+          mag_dir = atan(mag_y/mag_x)
+        else
+          mag_dir = atan(mag_y/mag_x) + 180
+        end
+
+        selectlabel(mag_x, mag_y)
+        setblockprop(rotor.magnet.material,--...
+          1,0,"", mag_dir, rotor.group)
+        clearselected()
+      end
+      -- center of the magnet
+      local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
+        angle)
+
+      selectlabel(mag_x, mag_y)
+      setblockprop(rotor.magnet.material,--...
+        1,0,"",angle+180,rotor.group)
+      clearselected()
+
+    end
+
+  end
 end
 
 

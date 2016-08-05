@@ -119,10 +119,17 @@ rotor.group = 10
 rotor.magnet = {
   -- magnetisation direction
   material = 'Magnet', -- magnet material
-  mgtz = 'parallel', -- 'parallel'/'?!radial'
-  shape = 'trapz', -- 'rect'/'trapz'/'?!sin'
+  mgtz = 'parallel', -- 'parallel'/'radial'
+  shape = 'rect', -- 'rect'/'trapz'/'?!sin'
   h = 5, -- [mm], magnet height
-  ang_e = 75 --[el°], magnet half electrical angle span
+  ang_e = 75, --[el°], magnet half electrical angle span
+
+  pole = 1,
+
+  comp_segments = function(self, sim)
+  self.magnet.segments = floor(self.magnet.ang_e/self.p/sim.dth) - 1
+  end
+
 }
 
 rotor.De = 113 -- [mm], external diameter
@@ -171,8 +178,10 @@ gap = {
 -- Simulation -----------------------------------------
 sim = {
   tipo = '?!unknown',
-  poles = 1
+  poles = 1,
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
+  dth = 1,
+  -- this is also necessary for the segmentation of the magnet
 }
 
 
