@@ -30,7 +30,7 @@ dofile(folder.tools .. "ufuns.lua")
 -- load wait function
 dofile(folder.tools .. "wait.lua")
 -- load slot matrix
-dofile(folder.tools .. "fun_slot_matrix_2.lua")
+dofile(folder.tools .. "fun_slot_matrix.lua")
 
 
 
@@ -44,7 +44,7 @@ stator = {
   -- position of the stator
   pos = 1, -- +1 outer, -1 inner
   group = 1000,
-  material = 'Iron',
+  material = 'iIron',
 
   -- slot parameters
   slot = {
@@ -73,16 +73,16 @@ stator = {
   winding = {
     m = 3, --  # oh phases
     Q = 36, -- # of stator slots
-    chording = 0, -- # of slots chorded
+    chording = 1, -- # of slots chorded
     sequence = {-2,1,-3,2,-1,3},
-    yq = floor(stator.winding.Q/2/stator.p), -- winding pitch
-    K = slot_matrix(--...
-      stator.winding.m,
-      stator.winding.Q,
-      stator.p,
-      stator.winding.yq,
-      stator.winding.sequence,
-      folder.inp)
+    supply = 'circuit', -- 'circuit'/'material'
+    -- this selects if you want to impose current in the
+    -- slots either with a circuit or with the material.
+
+    comp_yq = function(self)
+      self.winding.yq = floor(self.winding.Q/2/self.p) - --...
+        self.winding.chording -- winding pitch
+    end
   },
   
   -- Method: compute back-iron height
@@ -116,6 +116,15 @@ stator = {
   end
 
 }
+-- compute the winding pitch
+stator.winding.comp_yq(stator)
+-- get the slot matrix
+K,ADsfas = slot_matrix(stator.winding.m,
+                       stator.winding.Q,
+                       stator.p,
+                       stator.winding.yq,
+                       stator.winding.sequence,
+                       folder.inp)
 
 
 

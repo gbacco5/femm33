@@ -31,6 +31,8 @@ hidegrid();
 -- Materials definitions ------------------------------
 -- Air
 addmaterial("Air", 1, 1, 0, 0, 0, 0, 0, 0, 1, 0);
+-- Copper
+addmaterial("Cu", 1, 1, 0, 0, 0, 54, 0, 0, 1, 0);
 -- Iron
 addmaterial("Iron", 5000, 5000, 0, 0, 0, 0, 0, 0, 1, 0);
 -- ideal Iron

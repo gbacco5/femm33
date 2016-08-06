@@ -17,11 +17,11 @@
 -- ====================================================
 
 function slot_matrix(m,Q,p,yq,phase, folder)
-alphas = 360/Q
-alphase = p*alphas
+local alphas = 360/Q
+local alphase = p*alphas
 -- initialization -------------------------------------
-a_axis = 0
-K = {}
+local a_axis = 0
+local K = {}
 for qq = 1,Q do -- for every slot
   K[qq] = {}
   for i = 1,m do -- for every phase
@@ -31,7 +31,7 @@ end
 
 -- slot matrix K computation --------------------------
 for qq = 1,Q do -- for every slot
-  vangle = (qq-1)*alphase
+  local vangle = (qq-1)*alphase
   -- keep vangle between 0 and 360
   if vangle >= 360 then
     vangle = vangle - 360*floor(vangle/360)
@@ -39,14 +39,14 @@ for qq = 1,Q do -- for every slot
     vangle = vangle + 360*ceil(vangle/360)
   end
   -- compute the closing coil side
-  coil_return = qq + yq
+  local coil_return = qq + yq
   -- keep coil_return between the actual slots
   if coil_return > Q then
     coil_return = coil_return - Q
   end
   -- cycle initialization
-  sector = 0 -- sector counter
-  slot_found = 0 -- boolean
+  local sector = 0 -- sector counter
+  local slot_found = 0 -- boolean
   while (sector < 2*m and slot_found == 0) do
     sector = sector + 1
     if vangle >= ((sector-1)*180/m) and vangle < (sector*180/m) then
@@ -59,7 +59,7 @@ end
 
 
 -- a-axis computation ---------------------------------
-sumK = 0
+local sumK = 0
 -- this operation weights each angle by its slot matrix
 -- coefficient.
 for qq = 1,Q/p do

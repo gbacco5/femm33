@@ -6,7 +6,7 @@
 
 -- load functions -------------------------------------
 dofile(folder.tools .. "rotate.lua")
-dofile(folder.draw .. "fun_draw_slot.lua")
+dofile(folder.tools .. "fun_draw_slot.lua")
 
 -- draw a single slot ---------------------------------
 draw_slot(stator)
@@ -25,29 +25,34 @@ selectgroup(stator.group)
 copyrotate(0,0,stator.alphas, -- ...
   sim.poles/2/stator.p*stator.winding.Q - 1)
 clearselected()
--- -- create materials -----------------------------------
--- local x0 = stator.Dgap/2 + stator.pos*hs/2
--- local y0 = 0
 
--- for qq = 1,sim.poles/2/stator.p*stator.winding.Q do
---   local x,y = rotate( x0,y0, (qq-1)*stator.alphas )
---   addmaterial(stator.slot.material .. qq, 1, 1, 0, 0, 0, sigma_Cu, 0, 0, 1, 0)
+local x0 = stator.Dgap/2 + stator.pos*stator.slot.hs/2
+local y0 = 0
+if stator.winding.supply == 'material' then
+  -- create materials -----------------------------------
 
---   selectlabel(x,y)
---   setblockprop(stator.slot.material .. qq, 1, 0, "", 0, stator.group + qq)
---   clearselected()
--- end
--- -- OR create circuits ---------------------------------
--- for qq = 1,sim.poles/2/stator.p*stator.winding.Q do
---   local x,y = rotate( x0,y0, (qq-1)*stator.alphas )
---   --  circ name,Ire,Iim, DVre,DVim, 0 = I imposed
---   addcircprop("Islot_" .. qq, 0,0, 0,0, 0)
+  for qq = 1,sim.poles/2/stator.p*stator.winding.Q do
+    local x,y = rotate( x0,y0, (qq-1)*stator.alphas )
+    addmaterial(stator.slot.material .. qq, 1, 1, 0, 0, 0, sigma_Cu, 0, 0, 1, 0)
 
---   selectlabel(x,y)
---   setblockprop(stator.slot.material .. qq, 1, 0, "", 0, stator.group + qq)
---   clearselected()
--- end
+    selectlabel(x,y)
+    setblockprop(stator.slot.material .. qq, 1, 0, "", 0, stator.group + qq)
+    clearselected()
+  end
+elseif stator.winding.supply == 'circuit' then
+  -- OR create circuits ---------------------------------
+  for qq = 1,sim.poles/2/stator.p*stator.winding.Q do
+    local x,y = rotate( x0,y0, (qq-1)*stator.alphas )
+    circ_name_root = 'Islot_'
+    --  circ name,Ire,Iim, DVre,DVim, 0 = I imposed
+    addcircprop(circ_name_root .. qq, 0,0, 0,0, 0)
 
+    selectlabel(x,y)
+    setblockprop(stator.slot.material, 1, 0,--...
+      circ_name_root .. qq, 0, stator.group + qq)
+    clearselected()
+  end
+end
 
 
 if sim.poles ~= 2*stator.p then -- if simmetric sim
