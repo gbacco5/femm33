@@ -7,6 +7,7 @@
 
 username = "Giacomo"
 motor_model = "test"
+
 filename = "SPM".."_"..motor_model
 date_time = date("%Y%m%d_%H%M%S")
 
@@ -24,8 +25,12 @@ fn = {
   sett = 'settings'
 }
 
+-- load some useful functions
 dofile(folder.tools .. "ufuns.lua")
+-- load wait function
 dofile(folder.tools .. "wait.lua")
+-- load slot matrix
+dofile(folder.tools .. "fun_slot_matrix_2.lua")
 
 
 
@@ -48,6 +53,7 @@ stator = {
     hwed = 1, -- [mm], stator slot wedge height
     hs = 25, -- [mm], stator slot total height
     wt = 7, -- [mm], teeth width
+    material = 'Cu', 
     shape = 'rounded',
     -- 'squared/rounded/
     --  round/semiround/roundsemi/
@@ -68,8 +74,15 @@ stator = {
     m = 3, --  # oh phases
     Q = 36, -- # of stator slots
     chording = 0, -- # of slots chorded
-    sequence = {1,-3,2,-1,3,-2}
-    -- yq = self.Q/2/self.p -- winding pitch
+    sequence = {-2,1,-3,2,-1,3},
+    yq = floor(stator.winding.Q/2/stator.p), -- winding pitch
+    K = slot_matrix(--...
+      stator.winding.m,
+      stator.winding.Q,
+      stator.p,
+      stator.winding.yq,
+      stator.winding.sequence,
+      folder.inp)
   },
   
   -- Method: compute back-iron height
@@ -101,6 +114,7 @@ stator = {
     self.alphas = 360/self.winding.Q
     self.alphase = self.p*self.alphas
   end
+
 }
 
 
@@ -117,15 +131,16 @@ rotor.tipo = 'SPM'
 rotor.group = 10
 
 rotor.magnet = {
-  -- magnetisation direction
   material = 'Magnet', -- magnet material
+  -- magnetisation direction
   mgtz = 'parallel', -- 'parallel'/'radial'
-  shape = 'rect', -- 'rect'/'trapz'/'?!sin'
+  shape = 'trapz', -- 'rect'/'trapz'/'?!sin'
   h = 5, -- [mm], magnet height
   ang_e = 75, --[el°], magnet half electrical angle span
 
   pole = 1,
 
+  -- Method: compute the number of magnet segments
   comp_segments = function(self, sim)
   self.magnet.segments = floor(self.magnet.ang_e/self.p/sim.dth) - 1
   end
@@ -182,7 +197,12 @@ sim = {
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
   dth = 1,
   -- this is also necessary for the segmentation of the magnet
+
+  is_partial = function(self,ls)
+    self.partial = self.poles == 2*ls.p
+  end,
 }
+sim:is_partial(stator) -- get if the simulation is not complete
 
 
 

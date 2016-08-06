@@ -1,7 +1,7 @@
 -- STATOR.lua +++++++++++++++++++++++++++++++++++++++++
 -- This file start the drawing of the stator.
 --
--- bg, 2016/08/01
+-- bg, 2016/08/06
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 -- load functions -------------------------------------
@@ -14,8 +14,10 @@ draw_slot(stator)
 -- stator closing diameter ----------------------------
 if stator.pos == 1 then -- conventional motor
   stator.Dbound = stator.De
+  stator.Dgap = stator.Di
 elseif stator.pos == -1 then -- outer rotor
   stator.Dbound = stator.Di
+  stator.Dgap = stator.De
 end
 
 -- copy slots -----------------------------------------
@@ -23,6 +25,29 @@ selectgroup(stator.group)
 copyrotate(0,0,stator.alphas, -- ...
   sim.poles/2/stator.p*stator.winding.Q - 1)
 clearselected()
+-- -- create materials -----------------------------------
+-- local x0 = stator.Dgap/2 + stator.pos*hs/2
+-- local y0 = 0
+
+-- for qq = 1,sim.poles/2/stator.p*stator.winding.Q do
+--   local x,y = rotate( x0,y0, (qq-1)*stator.alphas )
+--   addmaterial(stator.slot.material .. qq, 1, 1, 0, 0, 0, sigma_Cu, 0, 0, 1, 0)
+
+--   selectlabel(x,y)
+--   setblockprop(stator.slot.material .. qq, 1, 0, "", 0, stator.group + qq)
+--   clearselected()
+-- end
+-- -- OR create circuits ---------------------------------
+-- for qq = 1,sim.poles/2/stator.p*stator.winding.Q do
+--   local x,y = rotate( x0,y0, (qq-1)*stator.alphas )
+--   --  circ name,Ire,Iim, DVre,DVim, 0 = I imposed
+--   addcircprop("Islot_" .. qq, 0,0, 0,0, 0)
+
+--   selectlabel(x,y)
+--   setblockprop(stator.slot.material .. qq, 1, 0, "", 0, stator.group + qq)
+--   clearselected()
+-- end
+
 
 
 if sim.poles ~= 2*stator.p then -- if simmetric sim

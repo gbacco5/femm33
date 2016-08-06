@@ -21,7 +21,7 @@ end
 
 -- if SPM (motor of interest) -------------------------
 if rotor.tipo == 'SPM' then 
-  dofile(folder.draw .. "SPM_rotor_2.lua")
+  dofile(folder.draw .. "SPM_rotor.lua")
 end
 
 

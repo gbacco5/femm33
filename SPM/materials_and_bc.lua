@@ -12,6 +12,17 @@ mesh_barrier = 3 --> mesh air
 mesh_pm  = 5 --> permanent magnet
 mesh_shaft = mesh_fe --> shaft
 
+mesh = {
+  gap = g/3,
+  fe = 3,
+  cu = 2,
+  air = 1,
+  pm = 3,
+  -- shaft = 
+  -- barrier = 
+}
+
+
 -- Problem definitions --------------------------------
 probdef(0, "millimeters", "planar", 1E-8, stator.L);
 hidegrid();

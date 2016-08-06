@@ -5,7 +5,7 @@ Some drawing and analysis code through FEMM 3.3
 
 ## 2. stator drawing --> OK
 
-## 3. SPM rotor drawing
+## 3. SPM rotor drawing --> OK
 
 ## 4. Air-gap drawing
 
