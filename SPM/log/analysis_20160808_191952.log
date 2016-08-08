@@ -1,0 +1,52 @@
+**************************************************
+Analysis 'no_load' started at 08/08/16 19:19:52
+by Giacomo on test.
+**************************************************
+
+Mesh precision factor is  3.
+The simulation is on   6 poles.
+
+
++++ Simulation n. 1 +++
+SPM_test opened...
+Rotor rotated by -1deg.
+FEA duration was 149.8 s.
+
+
++++ Simulation n. 2 +++
+SPM_test opened...
+Rotor rotated by -0.5deg.
+FEA duration was 156.7 s.
+
+
++++ Simulation n. 3 +++
+SPM_test opened...
+Rotor rotated by 0deg.
+FEA duration was 163.7 s.
+
+
++++ Simulation n. 4 +++
+SPM_test opened...
+Rotor rotated by 0.5deg.
+FEA duration was 169.5 s.
+
+
++++ Simulation n. 5 +++
+SPM_test opened...
+Rotor rotated by 1deg.
+FEA duration was 159.1 s.
+
+
++++ Simulation n. 6 +++
+SPM_test opened...
+Rotor rotated by 1.5deg.
+FEA duration was 165.6 s.
+
+
++++ Simulation n. 7 +++
+SPM_test opened...
+Rotor rotated by 2deg.
+FEA duration was 161.1 s.
+
+Analysis finished at 08/08/16 19:49:24
+**************************************************

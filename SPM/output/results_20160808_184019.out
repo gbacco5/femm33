@@ -1,0 +1,6 @@
+RESULTS for no_load analysis
+launched at 18:40:19 on 2016/08/08 by Giacomo on test.
+
+thm        torque       stator torque      lambda_a         lambda_b         lambda_c       lambda_d        lambda_q      
+
+0.00    1.40218e-002    8.70186e-002    8.72957e-003    -3.58897e-003    -2.69238e-003    7.91350e-003    -5.17651e-004    

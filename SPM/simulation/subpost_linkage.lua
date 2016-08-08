@@ -2,6 +2,7 @@
 -- This subroutine computes the flux linkages
 -- REQUIREMENTS:
 --  - motor_data.lua file to be loaded before the call
+--  - T_AB...m^dq to be already created
 --
 -- bg, 2016/08/08
 -- ====================================================
@@ -22,4 +23,8 @@ for qq = 1,stator.Q do
 end
 
 Lambda = {}
-Lambda = prod(Kt,stator.link)
+Lambda = prod(Kt, stator.link)
+
+Lambda_AB = prod(T_AB, Lambda)
+
+lambda_d,lambda_q = ab2dq(Lambda_AB[1], Lambda_AB[2], thme)

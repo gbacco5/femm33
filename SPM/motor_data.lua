@@ -248,7 +248,7 @@ gap = {
 -- ##     ## ##             ## ##     ## 
 -- ##     ## ##       ##    ## ##     ## 
 -- ##     ## ########  ######  ##     ## 
-precision = 1
+precision = 3
 -- Mesh sizes -----------------------------------------
 mesh = {
   gap = 0.95*g/gap.n_ele/precision, -- air-gap mesh
@@ -275,11 +275,11 @@ sim = {
   tipo = 'no_load', -- 'no_load'/'?!on_load'/'?!map'
   poles = 6,
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
-  dth = 1,
+  dth = 0.5,
   -- this is also necessary for the segmentation of the magnet
-  thm_s = 0,
-  thm_e = 180/stator.winding.m/stator.p - 1, -- 180/3/3 = 19
-  dthm = 1,
+  thm_s = -1,
+  thm_e = 2,--180/stator.winding.m/stator.p - 1, -- 180/3/3 = 19
+  dthm = 0.5,
   n = 0, -- # of simulation
 
   is_partial = function(self,ls)

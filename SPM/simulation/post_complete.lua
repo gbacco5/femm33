@@ -8,8 +8,11 @@
 dofile("motor_data.lua")
 dofile(folder.inp .. "K.lua")
 
+T_AB = gen_T_matrix(stator.winding.m)
+
 -- Reading of the simulation inputs -------------------
 dofile(folder.inp..'pass2post.lua')
+thme = stator.p*thm
 
 -- flux linkages computation --------------------------
 dofile(folder.sim.."subpost_linkage.lua")
@@ -36,6 +39,8 @@ write(ohandle,format('%3.2f',thm),tab,
               format('%1.5e',Lambda[1]),tab,
               format('%1.5e',Lambda[2]),tab,
               format('%1.5e',Lambda[3]),tab,
+              format('%1.5e',lambda_d),tab,
+              format('%1.5e',lambda_q),tab,
               '\n')
 closefile(ohandle)
 

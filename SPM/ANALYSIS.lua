@@ -47,6 +47,8 @@ write(ohandle,'thm ',tab,
               '   torque   ',tab,
               'stator torque',tab,
               lambda_string,
+              'lambda_d  ',tab,
+              '  lambda_q  ',tab,
               '\n\n')
 
 closefile(ohandle)

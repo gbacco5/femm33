@@ -1,0 +1,98 @@
+**************************************************
+Analysis 'no_load' started at 08/08/16 18:43:18
+by Giacomo on test.
+**************************************************
+
+Mesh precision factor is  1.
+The simulation is on 1 pole.
+
+
++++ Simulation n. 1 +++
+SPM_test opened...
+Rotor rotated by -5deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.3 s.
+
+
++++ Simulation n. 2 +++
+SPM_test opened...
+Rotor rotated by -4deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.7 s.
+
+
++++ Simulation n. 3 +++
+SPM_test opened...
+Rotor rotated by -3deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.3 s.
+
+
++++ Simulation n. 4 +++
+SPM_test opened...
+Rotor rotated by -2deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.6 s.
+
+
++++ Simulation n. 5 +++
+SPM_test opened...
+Rotor rotated by -1deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.2 s.
+
+
++++ Simulation n. 6 +++
+SPM_test opened...
+Rotor rotated by 0deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.1 s.
+
+
++++ Simulation n. 7 +++
+SPM_test opened...
+Rotor rotated by 1deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.4 s.
+
+
++++ Simulation n. 8 +++
+SPM_test opened...
+Rotor rotated by 2deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.3 s.
+
+
++++ Simulation n. 9 +++
+SPM_test opened...
+Rotor rotated by 3deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.5 s.
+
+
++++ Simulation n. 10 +++
+SPM_test opened...
+Rotor rotated by 4deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.8 s.
+
+
++++ Simulation n. 11 +++
+SPM_test opened...
+Rotor rotated by 5deg.
+Successfully closed the air-gap.
+
+FEA duration was  7.1 s.
+
+Analysis finished at 08/08/16 18:45:48
+**************************************************
