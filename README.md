@@ -7,8 +7,14 @@ Some drawing and analysis code through FEMM 3.3
 
 ## 3. SPM rotor drawing --> OK
 
-## 4. Air-gap drawing
+## 4. Air-gap drawing --> OK
 
 ## 5. Simulation file
 
+### 5.1. No.load analysis --> OK
+
 ## 6. Post-processing files
+
+### 6.1. torques
+### 6.2. flux linkages
+### 6.3. energies

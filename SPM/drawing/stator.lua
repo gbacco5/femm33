@@ -1,11 +1,11 @@
 -- STATOR.lua +++++++++++++++++++++++++++++++++++++++++
 -- This file start the drawing of the stator.
+--   + function 'rotate' already loaded
 --
 -- bg, 2016/08/06
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 -- load functions -------------------------------------
-dofile(folder.tools .. "rotate.lua")
 dofile(folder.tools .. "fun_draw_slot.lua")
 
 -- draw a single slot ---------------------------------
@@ -36,7 +36,7 @@ if stator.winding.supply == 'material' then
     addmaterial(stator.slot.material .. qq, 1, 1, 0, 0, 0, sigma_Cu, 0, 0, 1, 0)
 
     selectlabel(x,y)
-    setblockprop(stator.slot.material .. qq, 1, 0, "", 0, stator.group + qq)
+    setblockprop(stator.slot.material .. qq, 0, mesh.cu, "", 0, stator.group + qq)
     clearselected()
   end
 elseif stator.winding.supply == 'circuit' then
@@ -48,11 +48,12 @@ elseif stator.winding.supply == 'circuit' then
     addcircprop(circ_name_root .. qq, 0,0, 0,0, 0)
 
     selectlabel(x,y)
-    setblockprop(stator.slot.material, 1, 0,--...
+    setblockprop(stator.slot.material, 0, mesh.cu,--...
       circ_name_root .. qq, 0, stator.group + qq)
     clearselected()
   end
 end
+
 
 
 if sim.poles ~= 2*stator.p then -- if simmetric sim
@@ -63,10 +64,6 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
     stator.alphas*(stator.winding.Q/2/stator.p*sim.poles), 1)
 
   -- add gap nodes
-  gap.s1, gap.s2 = {},{}
-  gap.s1.x, gap.s1.y = rotate(gap.Rs,0, -stator.alphas/2)
-  gap.s2.x, gap.s2.y = rotate(gap.Rs,0, -- ...
-    stator.alphas*(stator.winding.Q/2/stator.p*sim.poles - 1/2) )
   addnode(gap.s1.x, gap.s1.y)
   addnode(gap.s2.x, gap.s2.y)
   
@@ -134,7 +131,7 @@ stat_block.x, stat_block.y = --...
   stator.Dbound/2 - stator.pos*stator.hbi/2, 0
 addblocklabel( stat_block.x, stat_block.y )
 selectlabel( stat_block.x, stat_block.y )
-setblockprop(stator.material,1,0,"",0,stator.group)
+setblockprop(stator.material,0,mesh.fe,"",0,stator.group)
 clearselected()
 
 -- assign everything stator to stator group -----------

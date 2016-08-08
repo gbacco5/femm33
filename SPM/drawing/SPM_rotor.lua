@@ -46,7 +46,7 @@ if rotor.magnet.mgtz == 'radial' then
     addblocklabel( mag_block.x, mag_block.y )
     selectlabel( mag_block.x, mag_block.y )
     setblockprop( rotor.magnet.material,--...
-      1,0,"", atan(mag_block.y/mag_block.x) ,rotor.group )
+      0,mesh.pm,"", atan(mag_block.y/mag_block.x) ,rotor.group )
     clearselected()
     
   end
@@ -70,7 +70,7 @@ mag_block.x, mag_block.y = 0, rotor.Dgap/2 - rotor.pos*rotor.magnet.h/2
 addblocklabel( mag_block.x, mag_block.y )
 selectlabel( mag_block.x, mag_block.y )
 setblockprop( rotor.magnet.material,--...
-  1,0,"",90,rotor.group )
+  0,mesh.pm,"",90,rotor.group )
 clearselected()
 
 -- show magnet external segments

@@ -1,12 +1,13 @@
 -- ROTOR.lua ++++++++++++++++++++++++++++++++++++++++++
 -- This file start the drawing of the rotor.
+-- REQUIREMENTS:
+--   + function 'rotate' already loaded
 --
 -- bg, 2016/08/05
 -- ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 -- load functions -------------------------------------
-dofile(folder.tools .. "rotate.lua")
 
 
 -- determine the diameter closer to the air-gap
@@ -46,10 +47,6 @@ copyrotate(0,0, 180/rotor.p, sim.poles - 1)
 if sim.poles ~= 2*stator.p then -- if simmetric sim
 
   -- add gap nodes
-  gap.r1, gap.r2 = {},{}
-  gap.r1.x, gap.r1.y = rotate(gap.Rr,0, -90/rotor.p)
-  gap.r2.x, gap.r2.y = rotate(gap.r1.x,gap.r1.y, -- ...
-    sim.poles*180/rotor.p)
   addnode(gap.r1.x, gap.r1.y)
   addnode(gap.r2.x, gap.r2.y)
 
@@ -123,7 +120,7 @@ if rotor.magnet then -- if rotor has magnet
 
       selectlabel(mag_x, mag_y)
       setblockprop(rotor.magnet.material,--...
-        1,0,"",angle+180,rotor.group)
+        0,mesh.pm,"",angle+180,rotor.group)
       clearselected()
     end
   
@@ -147,7 +144,7 @@ if rotor.magnet then -- if rotor has magnet
 
         selectlabel(mag_x, mag_y)
         setblockprop(rotor.magnet.material,--...
-          1,0,"", mag_dir, rotor.group)
+          0,mesh.pm,"", mag_dir, rotor.group)
         clearselected()
       end
       -- 2nd magnet half
@@ -165,7 +162,7 @@ if rotor.magnet then -- if rotor has magnet
 
         selectlabel(mag_x, mag_y)
         setblockprop(rotor.magnet.material,--...
-          1,0,"", mag_dir, rotor.group)
+          0,mesh.pm,"", mag_dir, rotor.group)
         clearselected()
       end
       -- center of the magnet
@@ -174,7 +171,7 @@ if rotor.magnet then -- if rotor has magnet
 
       selectlabel(mag_x, mag_y)
       setblockprop(rotor.magnet.material,--...
-        1,0,"",angle+180,rotor.group)
+        0,mesh.pm,"",angle+180,rotor.group)
       clearselected()
 
     end
@@ -188,7 +185,7 @@ local rot_block = {}
 rot_block.x, rot_block.y = (rotor.De + rotor.Di)/4, 0
 addblocklabel( rot_block.x, rot_block.y )
 selectlabel( rot_block.x, rot_block.y )
-setblockprop(rotor.material,1,0,"",0,rotor.group)
+setblockprop(rotor.material,0,mesh.fe,"",0,rotor.group)
 clearselected()
 
 -- assign everything rotor to rotor group -------------

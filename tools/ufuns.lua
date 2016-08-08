@@ -4,25 +4,21 @@
 -------------------------------------------------------
 
 function select_groupplus(gp, Q)
-	-- local Q = Q or 0
+	local Q = Q or 0
 	selectgroup(gp)
-	if Q ~= nil then
-		for qq = 1,Q do
-			selectgroup(gp + qq)
-		end
+	for qq = 1,Q do
+		selectgroup(gp + qq)
 	end
 	return
 end
 
 
 function groupplus_select_block(gp, Q)
-	-- local Q = Q or 0
+	local Q = Q or 0
 	groupselectblock(gp)
-	-- if Q ~= nil then
-		for qq = 1,Q do
-			groupselectblock(gp + qq)
-		end
-	-- end
+	for qq = 1,Q do
+		groupselectblock(gp + qq)
+	end
 	return
 end
 
@@ -34,6 +30,14 @@ function copy_table(t)
 	end
 	return v
 end
+
+function unpack (t, i)
+  i = i or 1
+  if t[i] ~= nil then
+    return t[i], unpack(t, i + 1)
+  end
+end
+
 
 
 alphabet = {'a','b','c','d','e','f','g','h','i',
@@ -153,20 +157,22 @@ elseif A_svm == 2 then
 				Cmat[k][h] = A[k][h]*B
 			end
 		end
-		return C -- matrix times scalar
+		return Cmat -- matrix times scalar
 
 	elseif B_svm == 1 then
 		if A.w == B.h then
 			for k = 1, A.h do
+				local somma = 0
 				for h = 1, A.w do
-					Cmat[k] = A[k][h]*B[h]
+					somma = somma + A[k][h]*B[h]
 				end
+				Cmat[k] = somma
 			end
 		else
 			error("Incompatible matrix/vector dimensions.")
 			return
 		end
-		return C -- matrix times vector
+		return Cmat -- matrix times vector
 
 	elseif B_svm == 2 then -- B is a matrix
 		if A.w == B.h then 

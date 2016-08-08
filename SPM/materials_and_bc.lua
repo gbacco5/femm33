@@ -1,33 +1,24 @@
 -- MATERIALS.lua ======================================
 -- This script defines the materials used in the
 -- simulations and the mesh size for every kind of block.
--- bg @2015/11/27
+-- bg, 2016/08/07
 -- ====================================================
-
--- Mesh sizes -----------------------------------------
-mesh_gap = g/3 --> airgap, to have at least 3 elements
-mesh_fe  = 3 --> iron
-mesh_air = 1 --> mesh air
-mesh_barrier = 3 --> mesh air
-mesh_pm  = 5 --> permanent magnet
-mesh_shaft = mesh_fe --> shaft
-
-mesh = {
-  gap = g/3,
-  fe = 3,
-  cu = 2,
-  air = 1,
-  pm = 3,
-  -- shaft = 
-  -- barrier = 
-}
 
 
 -- Problem definitions --------------------------------
 probdef(0, "millimeters", "planar", 1E-8, stator.L);
 hidegrid();
---pause()
 
+
+
+
+-- ##       #### ##    ## ########    ###    ########  
+-- ##        ##  ###   ## ##         ## ##   ##     ## 
+-- ##        ##  ####  ## ##        ##   ##  ##     ## 
+-- ##        ##  ## ## ## ######   ##     ## ########  
+-- ##        ##  ##  #### ##       ######### ##   ##   
+-- ##        ##  ##   ### ##       ##     ## ##    ##  
+-- ######## #### ##    ## ######## ##     ## ##     ## 
 -- Materials definitions ------------------------------
 -- Air
 addmaterial("Air", 1, 1, 0, 0, 0, 0, 0, 0, 1, 0);
@@ -45,7 +36,16 @@ sigma_Cu = 0 -- [MS/m], from Alberti, to have no skin effect
 sigma_Al_r = 15 -- [MS/m] @ 120K, from Alberti
 
 
--- Terni Iron -- non-linear
+
+
+-- ##    ##  #######  ##    ## ##       #### ##    ## ########    ###    ########  
+-- ###   ## ##     ## ###   ## ##        ##  ###   ## ##         ## ##   ##     ## 
+-- ####  ## ##     ## ####  ## ##        ##  ####  ## ##        ##   ##  ##     ## 
+-- ## ## ## ##     ## ## ## ## ##        ##  ## ## ## ######   ##     ## ########  
+-- ##  #### ##     ## ##  #### ##        ##  ##  #### ##       ######### ##   ##   
+-- ##   ### ##     ## ##   ### ##        ##  ##   ### ##       ##     ## ##    ##  
+-- ##    ##  #######  ##    ## ######## #### ##    ## ######## ##     ## ##     ## 
+-- Terni Iron -- nonlinear
 addmaterial("Terni",  7000, 7000, 0, 0, 0, 3, 0, 0, 1, 0);
 -- Terni BH curve
 addbhpoint("Terni", 0.00,  0);
@@ -85,10 +85,20 @@ addbhpoint("Terni", 2.004, 33000);
 addbhpoint("Terni", 2.075, 90000);
 addbhpoint("Terni", 3.000, 1335600);  
 
+
+
+
+-- ########       ######      
+-- ##     ##     ##    ##     
+-- ##     ##     ##           
+-- ########      ##           
+-- ##     ##     ##           
+-- ##     ## ### ##    ## ### 
+-- ########  ###  ######  ### 
 -- Boudary conditions
 addboundprop("Azero",0,0,0,0,0,0,0,0,0);
 
-for l = 1,5 do -- 5 should be adaptive
+for l = 1,5 do -- 5 should be adaptive ?!
   addboundprop("Az_per".. l,0,0,0,0,0,0,0,0,--...
     0.5*(-1)^(sim.poles+1) + 4.5 )
    -- 4 is for periodic, 5 for antiperiodic

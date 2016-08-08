@@ -214,7 +214,7 @@ clearselected()
 addblocklabel(0,D/2 + lp.pos*lp.slot.hs/2)
 addblocklabel(0,D/2 + lp.pos*lp.slot.hso/2)
 selectlabel(0,D/2 + lp.pos*lp.slot.hso/2)
-setblockprop("Air",1,0,"",0,lp.group)
+setblockprop("Air",0,lp.mesh.air,"",0,lp.group)
 clearselected()
 
 selectgroup(0) -- select all

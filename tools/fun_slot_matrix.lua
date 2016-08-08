@@ -74,6 +74,9 @@ ADsfas = (a_axis/sumK - 180)/p
 
 -- export K.lua ---------------------------------------
 handle = openfile(folder .. "K.lua","w")
+
+write(handle,'ADsfas = ',ADsfas,'\n\n')
+
 local string_start = "Kt = {{\n";
 local string_start_2 = "K = {{\n";
 local string_mid = "\n},{\n";
@@ -103,6 +106,7 @@ for qq = 1,Q do
     write(handle,string_mid)
   end
 end
+write(handle,string_end)
 closefile(handle)
 
 -- output

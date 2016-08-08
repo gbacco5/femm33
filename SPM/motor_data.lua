@@ -2,7 +2,7 @@
 -- This file start the drawing of the motor.
 -- '?!' options have already to be implemented.
 --
--- bg @2016/07/29
+-- bg, 2016/08/08
 -- ****************************************************
 
 username = "Giacomo"
@@ -10,23 +10,37 @@ motor_model = "test"
 
 filename = "SPM".."_"..motor_model
 date_time = date("%Y%m%d_%H%M%S")
+data = date('%Y/%m/%d')
+ora = date('%H:%M:%S')
 
+
+-- ####       ##  #######  
+--  ##       ##  ##     ## 
+--  ##      ##   ##     ## 
+--  ##     ##    ##     ## 
+--  ##    ##     ##     ## 
+--  ##   ##      ##     ## 
+-- #### ##        #######  
 -- I/O stuff ------------------------------------------
 folder = {
   tools = '..\\tools\\',
   draw = '.\\drawing\\',
   sim = '.\\simulation\\',
   out = '.\\output\\',
-  inp = '.\\input\\'
+  inp = '.\\input\\',
+  log = '.\\log\\',
 }
 
 fn = {
-  all = 'results'..date_time..'out',
-  sett = 'settings'
+  res = 'results'..'.out',
+  sett = 'settings',
+  res_help = 'help.txt'
 }
 
 -- load some useful functions
 dofile(folder.tools .. "ufuns.lua")
+-- load rotate function
+dofile(folder.tools .. "rotate.lua")
 -- load wait function
 dofile(folder.tools .. "wait.lua")
 -- load slot matrix
@@ -34,6 +48,13 @@ dofile(folder.tools .. "fun_slot_matrix.lua")
 
 
 
+--  ######  ########    ###    ########  #######  ########  
+-- ##    ##    ##      ## ##      ##    ##     ## ##     ## 
+-- ##          ##     ##   ##     ##    ##     ## ##     ## 
+--  ######     ##    ##     ##    ##    ##     ## ########  
+--       ##    ##    #########    ##    ##     ## ##   ##   
+-- ##    ##    ##    ##     ##    ##    ##     ## ##    ##  
+--  ######     ##    ##     ##    ##     #######  ##     ## 
 -- Stator ---------------------------------------------
 stator = {
   -- external parameters
@@ -44,7 +65,7 @@ stator = {
   -- position of the stator
   pos = 1, -- +1 outer, -1 inner
   group = 1000,
-  material = 'iIron',
+  material = 'Iron',
 
   -- slot parameters
   slot = {
@@ -73,9 +94,9 @@ stator = {
   winding = {
     m = 3, --  # oh phases
     Q = 36, -- # of stator slots
-    chording = 1, -- # of slots chorded
+    chording = 0, -- # of slots chorded
     sequence = {-2,1,-3,2,-1,3},
-    supply = 'circuit', -- 'circuit'/'material'
+    supply = 'material', -- 'circuit'/'material'
     -- this selects if you want to impose current in the
     -- slots either with a circuit or with the material.
 
@@ -116,18 +137,23 @@ stator = {
   end
 
 }
+-- compute the slot angle
+stator:comp_alphas()
 -- compute the winding pitch
 stator.winding.comp_yq(stator)
--- get the slot matrix
-K,ADsfas = slot_matrix(stator.winding.m,
-                       stator.winding.Q,
-                       stator.p,
-                       stator.winding.yq,
-                       stator.winding.sequence,
-                       folder.inp)
+-- let stator.Q
+stator.Q = stator.winding.Q
 
 
 
+
+-- ########   #######  ########  #######  ########  
+-- ##     ## ##     ##    ##    ##     ## ##     ## 
+-- ##     ## ##     ##    ##    ##     ## ##     ## 
+-- ########  ##     ##    ##    ##     ## ########  
+-- ##   ##   ##     ##    ##    ##     ## ##   ##   
+-- ##    ##  ##     ##    ##    ##     ## ##    ##  
+-- ##     ##  #######     ##     #######  ##     ## 
 -- Rotor ----------------------------------------------
 -- the rotor table uses the stator one as a template.
 -- we cannot simply do  rotor = stator, otherwise both
@@ -142,7 +168,7 @@ rotor.group = 10
 rotor.magnet = {
   material = 'Magnet', -- magnet material
   -- magnetisation direction
-  mgtz = 'parallel', -- 'parallel'/'radial'
+  mgtz = 'radial', -- 'parallel'/'radial'
   shape = 'trapz', -- 'rect'/'trapz'/'?!sin'
   h = 5, -- [mm], magnet height
   ang_e = 75, --[el°], magnet half electrical angle span
@@ -160,15 +186,25 @@ rotor.De = 113 -- [mm], external diameter
 rotor.Di = 40 -- [mm], internal diameter
 rotor.pos = -stator.pos -- opposite position than the stator
 rotor.arcangle = 1 -- maximum discretisation angle
+rotor.rotation = 0
 
 rotor.slot = nil -- no slots
 rotor.winding = nil -- no winding
 rotor.ws_wse = nil -- delete useless method
 rotor.comp_alphas = nil -- delete useless method
+rotor.Q = nil
 
 shaft = {material = '<No Mesh>'}
 
 
+
+--    ###    #### ########           ######      ###    ########  
+--   ## ##    ##  ##     ##         ##    ##    ## ##   ##     ## 
+--  ##   ##   ##  ##     ##         ##         ##   ##  ##     ## 
+-- ##     ##  ##  ########  ####### ##   #### ##     ## ########  
+-- #########  ##  ##   ##           ##    ##  ######### ##        
+-- ##     ##  ##  ##    ##          ##    ##  ##     ## ##        
+-- ##     ## #### ##     ##          ######   ##     ## ##        
 -- Air-gap --------------------------------------------
 if stator.pos == 1 then -- conventional motor, inner rotor
   if rotor.tipo == 'SPM' then
@@ -195,23 +231,92 @@ gap = {
   r = ag_R, -- radius
   Rs = ag_R + stator.pos*1e-6, -- upper radius
   Rr = ag_R - rotor.pos*1e-6, -- lower radius
+  material = 'Air',
+  -- this variable tells the program how many physical
+  -- divisions you want to draw
+  group = 1,
+  division = 1,
+  n_ele = 4, -- # of elements you'd like in the gap
 }
 
 
 
+-- ##     ## ########  ######  ##     ## 
+-- ###   ### ##       ##    ## ##     ## 
+-- #### #### ##       ##       ##     ## 
+-- ## ### ## ######    ######  ######### 
+-- ##     ## ##             ## ##     ## 
+-- ##     ## ##       ##    ## ##     ## 
+-- ##     ## ########  ######  ##     ## 
+precision = 1
+-- Mesh sizes -----------------------------------------
+mesh = {
+  gap = 0.95*g/gap.n_ele/precision, -- air-gap mesh
+  fe = 3/precision, -- iron mesh
+  cu = 2/precision, -- copper mesh
+  air = 0.5/precision, -- air mesh, other than air-gap
+  pm = 1/precision, -- PM mesh
+  -- shaft = 
+  -- barrier = 
+}
+stator.mesh = {air = mesh.air}
+
+
+
+--  ######  #### ##     ## ##     ## ##          ###    ######## ####  #######  ##    ##    
+-- ##    ##  ##  ###   ### ##     ## ##         ## ##      ##     ##  ##     ## ###   ##    
+-- ##        ##  #### #### ##     ## ##        ##   ##     ##     ##  ##     ## ####  ##    
+--  ######   ##  ## ### ## ##     ## ##       ##     ##    ##     ##  ##     ## ## ## ##    
+--       ##  ##  ##     ## ##     ## ##       #########    ##     ##  ##     ## ##  ####    
+-- ##    ##  ##  ##     ## ##     ## ##       ##     ##    ##     ##  ##     ## ##   ###    
+--  ######  #### ##     ##  #######  ######## ##     ##    ##    ####  #######  ##    ##    
 -- Simulation -----------------------------------------
 sim = {
-  tipo = '?!unknown',
-  poles = 1,
+  tipo = 'no_load', -- 'no_load'/'?!on_load'/'?!map'
+  poles = 6,
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
   dth = 1,
   -- this is also necessary for the segmentation of the magnet
+  thm_s = 0,
+  thm_e = 180/stator.winding.m/stator.p - 1, -- 180/3/3 = 19
+  dthm = 1,
+  n = 0, -- # of simulation
 
   is_partial = function(self,ls)
-    self.partial = self.poles == 2*ls.p
+    self.partial = self.poles ~= 2*ls.p
   end,
 }
 sim:is_partial(stator) -- get if the simulation is not complete
+
+
+
+
+
+--  ######     ###    ##        ######   ######  
+-- ##    ##   ## ##   ##       ##    ## ##    ## 
+-- ##        ##   ##  ##       ##       ##       
+-- ##       ##     ## ##       ##        ######  
+-- ##       ######### ##       ##             ## 
+-- ##    ## ##     ## ##       ##    ## ##    ## 
+--  ######  ##     ## ########  ######   ######  
+-- These points are the ones for closing the air-gap.
+--  - 's' stands for stator
+--  - 'r' stands for rotor
+gap.s1, gap.s2 = {},{}
+gap.s1.x, gap.s1.y = rotate(gap.Rs,0, -stator.alphas/2)
+gap.s2.x, gap.s2.y = rotate(gap.Rs,0, -- ...
+  stator.alphas*(stator.winding.Q/2/stator.p*sim.poles - 1/2) )
+
+gap.r1, gap.r2 = {},{}
+gap.r1.x, gap.r1.y = rotate(gap.Rr,0, -90/rotor.p)
+gap.r2.x, gap.r2.y = rotate(gap.r1.x,gap.r1.y, -- ...
+  sim.poles*180/rotor.p)
+
+-- resting position of the rotor with respect to s1
+rotor.rest = 90/rotor.p - stator.alphas/2
+-- simulated slots
+sim.slots = stator.winding.Q/2/stator.p*sim.poles
+
 
 
 
