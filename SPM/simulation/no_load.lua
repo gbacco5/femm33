@@ -36,7 +36,7 @@ for thm = sim.thm_s,sim.thm_e,sim.dthm do
   -- air-gap closing ----------------------------------
   if sim.partial then
     dofile(folder.draw .. "airgap_close.lua")
-    tolog('Successfully closed the air-gap.\n\n')
+    tolog('Successfully closed the air-gap.\n')
   end
 
   -- pass to post-processing

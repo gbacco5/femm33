@@ -96,7 +96,7 @@ stator = {
     Q = 36, -- # of stator slots
     chording = 0, -- # of slots chorded
     sequence = {-2,1,-3,2,-1,3},
-    supply = 'material', -- 'circuit'/'material'
+    supply = 'circuit', -- 'circuit'/'material'
     -- this selects if you want to impose current in the
     -- slots either with a circuit or with the material.
 
@@ -168,7 +168,7 @@ rotor.group = 10
 rotor.magnet = {
   material = 'Magnet', -- magnet material
   -- magnetisation direction
-  mgtz = 'radial', -- 'parallel'/'radial'
+  mgtz = 'parallel', -- 'parallel'/'radial'
   shape = 'trapz', -- 'rect'/'trapz'/'?!sin'
   h = 5, -- [mm], magnet height
   ang_e = 75, --[el°], magnet half electrical angle span
@@ -248,7 +248,7 @@ gap = {
 -- ##     ## ##             ## ##     ## 
 -- ##     ## ##       ##    ## ##     ## 
 -- ##     ## ########  ######  ##     ## 
-precision = 3
+precision = 1
 -- Mesh sizes -----------------------------------------
 mesh = {
   gap = 0.95*g/gap.n_ele/precision, -- air-gap mesh
@@ -273,20 +273,25 @@ stator.mesh = {air = mesh.air}
 -- Simulation -----------------------------------------
 sim = {
   tipo = 'no_load', -- 'no_load'/'?!on_load'/'?!map'
-  poles = 6,
+  poles = 2*stator.p,
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
-  dth = 0.5,
+  dth = 1,
   -- this is also necessary for the segmentation of the magnet
-  thm_s = -1,
-  thm_e = 2,--180/stator.winding.m/stator.p - 1, -- 180/3/3 = 19
-  dthm = 0.5,
+  thm_s = 0,
+  thm_e = 360/6/3 - 1,--180/stator.winding.m/stator.p - 1, -- 180/3/3 = 19
+  dthm = 1,
   n = 0, -- # of simulation
 
   is_partial = function(self,ls)
     self.partial = self.poles ~= 2*ls.p
   end,
+
+  total = function (self)
+    self.ntot = (self.thm_e - self.thm_s)/self.dthm + 1
+  end
 }
 sim:is_partial(stator) -- get if the simulation is not complete
+sim:total() -- get the total number of simulations
 
 
 

@@ -39,6 +39,22 @@ function unpack (t, i)
 end
 
 
+-- prepare log ----------------------------------------
+function tolog(...)
+  handle = openfile(folder.log ..--...
+    "analysis_"..date_time .. '.log','a')
+
+  if arg[1] == 'cr' then -- "carriage return"
+    write(handle,
+      "**************************************************\n")
+  else
+    write(handle,unpack(arg))
+  end
+  closefile(handle)
+
+end
+
+
 
 alphabet = {'a','b','c','d','e','f','g','h','i',
 			'j','k','l','m','n','o','p','q','r',

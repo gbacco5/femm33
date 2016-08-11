@@ -50,7 +50,7 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   addnode(gap.r1.x, gap.r1.y)
   addnode(gap.r2.x, gap.r2.y)
 
-    -- add stator closing
+    -- add rotor closing
   back.r1,back.r2 = {},{}
   back.r1.x,back.r1.y = rotate(rotor.Dbound/2,0, -90/rotor.p)
   back.r2.x, back.r2.y = rotate(back.r1.x,back.r1.y, -- ...
