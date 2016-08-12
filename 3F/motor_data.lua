@@ -6,9 +6,9 @@
 -- ****************************************************
 
 username = "Giacomo"
-motor_model = "test"
+motor_model = "Bianchi"
 
-filename = "SPM".."_"..motor_model
+filename = "BLDC".."_"..motor_model
 date_time = date("%Y%m%d_%H%M%S")
 data = date('%Y/%m/%d')
 ora = date('%H:%M:%S')
@@ -57,9 +57,9 @@ dofile(folder.tools .. "fun_slot_matrix.lua")
 -- Stator ---------------------------------------------
 stator = {
   -- external parameters
-  De = 200, -- [mm], external diameter
-  Di = 125, -- [mm], internal diameter
-  L = 40, -- [mm], stator stack lenght
+  De = 125, -- [mm], external diameter
+  Di = 61, -- [mm], internal diameter
+  L = 38, -- [mm], stator stack lenght
   p = 3, -- # of pole pairs
   -- position of the stator
   pos = 1, -- +1 outer, -1 inner
@@ -68,19 +68,19 @@ stator = {
 
   -- slot parameters
   slot = {
-    wso = 3, -- [mm], stator slot opening width
-    hso = 1, -- [mm], stator slot opening height
-    hwed = 1, -- [mm], stator slot wedge height
-    hs = 25, -- [mm], stator slot total height
-    wt = 7, -- [mm], teeth width
+    wso = 3.55, -- [mm], stator slot opening width
+    hso = 2.5, -- [mm], stator slot opening height
+    hwed = 1.5, -- [mm], stator slot wedge height
+    hs = 22, -- [mm], stator slot total height
+    wt = 7.5, -- [mm], teeth width
     material = 'Cu', 
-    shape = 'rounded',
+    shape = 'semiarc',
     -- 'squared/rounded/
     --  round/semiround/roundsemi/
     --  semiarc/roundarc'
 
     -- if round/semiround/semiarc/roundarc
-    arcangle = 20,
+    arcangle = 5,
 
     -- if round/rounded/roundsemi/roundarc
     join_angle = 30, -- input if desired
@@ -92,7 +92,7 @@ stator = {
   -- winding parameters
   winding = {
     m = 3, --  # oh phases
-    Q = 36, -- # of stator slots
+    Q = 9, -- # of stator slots
     chording = 0, -- # of slots chorded
     sequence = {-2,1,-3,2,-1,3},
     supply = 'circuit', -- 'circuit'/'material'
@@ -167,12 +167,12 @@ rotor.group = 10
 rotor.magnet = {
   material = 'Magnet', -- magnet material
   -- magnetisation direction
-  mgtz = 'parallel', -- 'parallel'/'radial'/'tangential'
+  mgtz = 'radial', -- 'parallel'/'radial'/'tangential'
   shape = 'trapz', -- 'rect'/'trapz'/'?!sin'
-  h = 5, -- [mm], magnet height
-  ang_e = 75, --[el°], magnet half electrical angle span
+  h = 7.5, -- [mm], magnet height
+  ang_e = 55/2*3, --[el°], magnet half electrical angle span
 
-  pole = 1,
+  pole = 1, --#################################
 
   -- Method: compute the number of magnet segments
   comp_segments = function(self, sim)
@@ -181,8 +181,8 @@ rotor.magnet = {
 
 }
 
-rotor.De = 113 -- [mm], external diameter
-rotor.Di = 40 -- [mm], internal diameter
+rotor.De = 44.7 -- [mm], external diameter
+rotor.Di = 18 -- [mm], internal diameter
 rotor.pos = -stator.pos -- opposite position than the stator
 rotor.arcangle = 1 -- maximum discretisation angle
 rotor.rotation = 0
@@ -272,7 +272,7 @@ stator.mesh = {air = mesh.air}
 -- Simulation -----------------------------------------
 sim = {
   tipo = 'no_load', -- 'no_load'/'?!on_load'/'?!map'
-  poles = 2*stator.p,
+  poles = 2,
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
   dth = 1,
   -- this is also necessary for the segmentation of the magnet

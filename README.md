@@ -8,7 +8,7 @@ The icon is temporary due to copyright restrictions.
 
 
 ## How-to quickly:
-1. make a copy of the folder 'template_motor'
+1. make a copy of the folder 'template_motor' in './'
 2. rename it to your taste
 3. edit 'motor_data.lua' with your specifications
 4. add, change, remove (carefully) materials in 'materials_and_bc.lua'

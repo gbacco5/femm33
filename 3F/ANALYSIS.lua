@@ -63,7 +63,7 @@ closefile(ohandle)
 -- output to log --------------------------------------
 tolog("cr") -- carriage return (line filled with *)
 tolog("Analysis '"..sim.tipo.."' started at "..date().."\n")
-tolog("by "..username.." on "..motor_model..".\n\n")
+tolog("by "..username.." on "..filename..".\n\n")
 tolog("The number of simulations is ", sim.ntot, ".\n")
 -- tolog("cr")
 

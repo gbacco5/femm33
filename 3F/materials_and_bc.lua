@@ -29,7 +29,7 @@ addmaterial("Iron", 5000, 5000, 0, 0, 0, 0, 0, 0, 1, 0);
 -- ideal Iron
 addmaterial("iIron", 1e6, 1e6, 0, 0, 0, 0, 0, 0, 1, 0);
 -- Magnet
-addmaterial("Magnet", 1.08, 1.08, 666800, 0, 0, 0.667, 0, 0, 1, 0);
+addmaterial("Magnet", 1.05, 1.05, 303152, 0, 0, 0.667, 0, 0, 1, 0);
 -- Stator copper
 sigma_Cu = 0 -- [MS/m], from Alberti, to have no skin effect
 -- Rotor Aluminum
