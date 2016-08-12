@@ -42,3 +42,5 @@ zoomnatural()
 
 -- SAVE ***********************************************
 savefemmfile(filename .. ".fem")
+
+exitpre()

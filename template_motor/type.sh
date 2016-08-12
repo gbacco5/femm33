@@ -1,0 +1,2 @@
+# choose what you want to do
+TYPE="DRAWING+ANALYSIS" # "DRAWING"/"ANALYSIS"/"DRAWING+ANALYSIS"

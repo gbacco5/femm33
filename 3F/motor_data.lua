@@ -23,7 +23,7 @@ ora = date('%H:%M:%S')
 -- #### ##        #######  
 -- I/O stuff ------------------------------------------
 folder = {
-  tools = '..\\tools\\',
+  tools = '.\\tools\\',
   draw = '.\\drawing\\',
   sim = '.\\simulation\\',
   out = '.\\output\\',
@@ -34,7 +34,6 @@ folder = {
 fn = {
   res = 'results'..'.out',
   sett = 'settings'..'.out',
-  res_help = 'help.txt'
 }
 
 -- load some useful functions
@@ -282,7 +281,7 @@ sim = {
   dthm = 1,
   n = 0, -- # of simulation
 
-  post = 'post_efficient',
+  post = 'post_efficient', -- 'post_complete'/'post_efficient'
 
   is_partial = function(self,ls)
     self.partial = self.poles ~= 2*ls.p

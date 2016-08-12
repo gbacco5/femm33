@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=3F
+Terminal=false
+Exec=bash -c 'cd $(dirname %k) && wine femm33Mar/bin/femme.exe -lua-script="DRAWING.lua"'
+Icon=/home/ubuntu/Documenti/git/femm33/3F/more/3F.png
