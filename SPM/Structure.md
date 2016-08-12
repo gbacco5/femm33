@@ -1,4 +1,5 @@
 # Structure
+?! means not yet implemented
 
 Linux:    # 0.RUN.sh (Wine necessary)
 Windows:  # 0.RUN.cmd
@@ -38,15 +39,17 @@ complete or just a slice.
 
 ### draw the air-gap
 - common air-gap
-- discretised air-gap and magnet (also for radial magnetisation)
+- ?! discretised air-gap and magnet (also for radial magnetisation)
 
 
 
 ## analyses
 Take the drawing and start processing.
-If the drawing does not exist, launch it.
+?! If the drawing does not exist, launch it.
 
 ### no-load analysis
+For various rotor position it computes all the quantities. You can
+compute the cogging torque and the no-load bemf.
 
 
 ### on-load analysis
@@ -54,3 +57,7 @@ Impose currents in the cicuits.
 Typically the current is given in the dq reference frame.
 Therefore dq --> AlphaBeta --> abc...m --> slots
            T_dq^AB     T_AB^a...m       K
+
+Two current impositions:
+1. sinusoidal through the dq transform
+2. BLDC control

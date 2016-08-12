@@ -1,5 +1,7 @@
-# femm33
+# 3F --- Framework For Femm
+
 Some drawing and analysis code through FEMM 3.3
+The icon is temporary due to copyrights restrictions.
 
 ## 1. motor data in tables --> OK
 
@@ -15,6 +17,6 @@ Some drawing and analysis code through FEMM 3.3
 
 ## 6. Post-processing files
 
-### 6.1. torques
-### 6.2. flux linkages
-### 6.3. energies
+### 6.1. torques --> OK
+### 6.2. flux linkages --> OK
+### 6.3. energies --> OK

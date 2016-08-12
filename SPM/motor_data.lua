@@ -33,7 +33,7 @@ folder = {
 
 fn = {
   res = 'results'..'.out',
-  sett = 'settings',
+  sett = 'settings'..'.out',
   res_help = 'help.txt'
 }
 
@@ -168,7 +168,7 @@ rotor.group = 10
 rotor.magnet = {
   material = 'Magnet', -- magnet material
   -- magnetisation direction
-  mgtz = 'parallel', -- 'parallel'/'radial'
+  mgtz = 'parallel', -- 'parallel'/'radial'/'tangential'
   shape = 'trapz', -- 'rect'/'trapz'/'?!sin'
   h = 5, -- [mm], magnet height
   ang_e = 75, --[el°], magnet half electrical angle span
@@ -278,9 +278,11 @@ sim = {
   dth = 1,
   -- this is also necessary for the segmentation of the magnet
   thm_s = 0,
-  thm_e = 360/6/3 - 1,--180/stator.winding.m/stator.p - 1, -- 180/3/3 = 19
+  thm_e = 0,--180/stator.winding.m/stator.p - 1, -- 180/3/3 = 19
   dthm = 1,
   n = 0, -- # of simulation
+
+  post = 'post_efficient',
 
   is_partial = function(self,ls)
     self.partial = self.poles ~= 2*ls.p
@@ -304,6 +306,7 @@ sim:total() -- get the total number of simulations
 -- ##       ######### ##       ##             ## 
 -- ##    ## ##     ## ##       ##    ## ##    ## 
 --  ######  ##     ## ########  ######   ######  
+
 -- These points are the ones for closing the air-gap.
 --  - 's' stands for stator
 --  - 'r' stands for rotor
@@ -317,10 +320,16 @@ gap.r1.x, gap.r1.y = rotate(gap.Rr,0, -90/rotor.p)
 gap.r2.x, gap.r2.y = rotate(gap.r1.x,gap.r1.y, -- ...
   sim.poles*180/rotor.p)
 
+
 -- resting position of the rotor with respect to s1
 rotor.rest = 90/rotor.p - stator.alphas/2
--- simulated slots
+-- # of simulated slots
 sim.slots = stator.winding.Q/2/stator.p*sim.poles
+
+
+-- compute transformation matrices --------------------
+T_AB = gen_T_matrix(stator.winding.m)
+U_abc = gen_U_matrix(stator.winding.m)
 
 
 

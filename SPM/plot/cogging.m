@@ -2,17 +2,16 @@ clear all;
 close all;
 clc;
 
-header = 5;
+% results filename
+res_fn = '../output/results_20160812_090941.out';
 
-D = dlmread('../output/results.out');
-D = D(header + 1:end, :);
+read_results % self-explaining
 
-thm = D(:,1);
-torque = D(:,2);
-Wm  = D(:,10); 
-Wcm = D(:,11);
+% compute torque from magnetic energies
+DWmDthm = gradient(Wm)/(thm(2) - thm(1))/pi*180;
+DWcmDthm = gradient(Wcm)/(thm(2) - thm(1))/pi*180;
 
-dWmdthm = gradient(Wm)/(thm(2) - thm(1))/pi*180;
-dWcmdthm = gradient(Wcm)/(thm(2) - thm(1))/pi*180;
+plot(thm,torque,'.-',thm,DWmDthm,'o-')
 
-plot(thm,torque,'.-',thm,dWmdthm,'o-')
+figure
+plot(thm,Lambda)

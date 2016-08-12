@@ -29,30 +29,34 @@ for mm = 1,stator.winding.m do
 end
 
 local n_out = 12 + stator.winding.m
-out_string = '   1   '..tab
+out_string = '  1  '..tab
 for i_out = 2,n_out do
-  out_string = out_string .. '      '..i_out..'     '..tab
+  if i_out < 10 then 
+    out_string = out_string .. '      '..i_out..'      '..tab
+  else
+    out_string = out_string .. '     '..i_out..'      '..tab
+  end
 end
 
 write(ohandle,out_string,'\n')
 
-write(ohandle,'thm ',tab,
+write(ohandle,' thm ',tab,
               --
-              '   torque   ',tab,
+              '    torque   ',tab,
               'stator torque',tab,
-              '  torque_dq ',tab,
+              '   torque_dq ',tab,
               --
               lambda_string,
-              'lambda_d  ',tab,
-              '  lambda_q  ',tab,
+              '  lambda_d   ',tab,
+              '  lambda_q   ',tab,
               --
-              'magn energy ',tab,
+              'magn energy  ',tab,
               'magn coenergy',tab,
               --
-              '     Fx     ',tab,
-              '     Fy     ',tab,
-              '  stator Fx ',tab,
-              '  stator Fy ',tab,
+              '     Fx      ',tab,
+              '     Fy      ',tab,
+              '  stator Fx  ',tab,
+              '  stator Fy  ',tab,
               '\n\n')
 
 closefile(ohandle)
@@ -63,7 +67,7 @@ tolog("cr") -- carriage return (line filled with *)
 tolog("Analysis '"..sim.tipo.."' started at "..date().."\n")
 tolog("by "..username.." on "..motor_model..".\n\n")
 tolog("The number of simulations is ", sim.ntot, ".\n")
-tolog("cr")
+-- tolog("cr")
 
 
 
@@ -81,7 +85,7 @@ dofile(folder.tools .. "sub_clearall_temp.lua")
 
 
 -- output to log --------------------------------------
-tolog("Analysis finished at ",date(),"\n")
+tolog("\nAnalysis finished at ",date(),"\n")
 tolog("cr")
 
 

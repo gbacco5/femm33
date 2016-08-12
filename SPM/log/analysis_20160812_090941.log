@@ -1,5 +1,5 @@
 **************************************************
-Analysis 'no_load' started at 08/11/16 11:56:53
+Analysis 'no_load' started at 08/12/16 09:09:41
 by Giacomo on test.
 
 The number of simulations is 20.
@@ -12,121 +12,121 @@ The simulation is on   6 poles.
 +++ Simulation n. 1 +++
 SPM_test opened...
 Rotor rotated by 0deg.
-FEA duration was 11.6 s.
+FEA duration was 11.9 s.
 
 
 +++ Simulation n. 2 +++
 SPM_test opened...
 Rotor rotated by 1deg.
-FEA duration was 11.0 s.
+FEA duration was 12.0 s.
 
 
 +++ Simulation n. 3 +++
 SPM_test opened...
 Rotor rotated by 2deg.
-FEA duration was 11.1 s.
+FEA duration was 20.7 s.
 
 
 +++ Simulation n. 4 +++
 SPM_test opened...
 Rotor rotated by 3deg.
-FEA duration was 12.1 s.
+FEA duration was 18.4 s.
 
 
 +++ Simulation n. 5 +++
 SPM_test opened...
 Rotor rotated by 4deg.
-FEA duration was 11.4 s.
+FEA duration was 17.4 s.
 
 
 +++ Simulation n. 6 +++
 SPM_test opened...
 Rotor rotated by 5deg.
-FEA duration was 11.4 s.
+FEA duration was 19.7 s.
 
 
 +++ Simulation n. 7 +++
 SPM_test opened...
 Rotor rotated by 6deg.
-FEA duration was 12.9 s.
+FEA duration was 11.7 s.
 
 
 +++ Simulation n. 8 +++
 SPM_test opened...
 Rotor rotated by 7deg.
-FEA duration was 14.9 s.
+FEA duration was 11.0 s.
 
 
 +++ Simulation n. 9 +++
 SPM_test opened...
 Rotor rotated by 8deg.
-FEA duration was 11.0 s.
+FEA duration was 11.2 s.
 
 
 +++ Simulation n. 10 +++
 SPM_test opened...
 Rotor rotated by 9deg.
-FEA duration was 11.3 s.
+FEA duration was 11.7 s.
 
 
 +++ Simulation n. 11 +++
 SPM_test opened...
 Rotor rotated by 10deg.
-FEA duration was 11.3 s.
+FEA duration was 12.3 s.
 
 
 +++ Simulation n. 12 +++
 SPM_test opened...
 Rotor rotated by 11deg.
-FEA duration was 11.3 s.
+FEA duration was 13.6 s.
 
 
 +++ Simulation n. 13 +++
 SPM_test opened...
 Rotor rotated by 12deg.
-FEA duration was 11.5 s.
+FEA duration was 11.9 s.
 
 
 +++ Simulation n. 14 +++
 SPM_test opened...
 Rotor rotated by 13deg.
-FEA duration was 11.3 s.
+FEA duration was 14.5 s.
 
 
 +++ Simulation n. 15 +++
 SPM_test opened...
 Rotor rotated by 14deg.
-FEA duration was 11.2 s.
+FEA duration was 14.8 s.
 
 
 +++ Simulation n. 16 +++
 SPM_test opened...
 Rotor rotated by 15deg.
-FEA duration was 11.3 s.
+FEA duration was 16.0 s.
 
 
 +++ Simulation n. 17 +++
 SPM_test opened...
 Rotor rotated by 16deg.
-FEA duration was 11.4 s.
+FEA duration was 13.7 s.
 
 
 +++ Simulation n. 18 +++
 SPM_test opened...
 Rotor rotated by 17deg.
-FEA duration was 11.8 s.
+FEA duration was 13.8 s.
 
 
 +++ Simulation n. 19 +++
 SPM_test opened...
 Rotor rotated by 18deg.
-FEA duration was 11.2 s.
+FEA duration was 14.4 s.
 
 
 +++ Simulation n. 20 +++
 SPM_test opened...
 Rotor rotated by 19deg.
-FEA duration was 15.5 s.
+FEA duration was 14.4 s.
 
-Analysis finished at 08/11/16 12:07:59
+Analysis finished at 08/12/16 09:18:15
 **************************************************

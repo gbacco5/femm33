@@ -9,13 +9,12 @@
 --  - motor_data.lua file to be loaded before the call
 --  - fluxes to be already computed
 --
--- bg, 2016/08/10
+-- bg, 2016/08/11
 -- ====================================================
 
 -- torque + forces on rotor ---------------------------
 groupplus_select_block(rotor.group,rotor.Q)
 rotor.torque = 2*rotor.p/sim.poles* blockintegral(22)
--- I am not  sure about the forces ?!?!?!
 rotor.Fx = blockintegral(18)
 rotor.Fy = blockintegral(19)
 clearblock()

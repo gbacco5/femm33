@@ -50,7 +50,7 @@ if sim.poles ~= 2*stator.p then -- if simmetric sim
   addnode(gap.r1.x, gap.r1.y)
   addnode(gap.r2.x, gap.r2.y)
 
-    -- add rotor closing
+    -- add rotor closing (==shaft)
   back.r1,back.r2 = {},{}
   back.r1.x,back.r1.y = rotate(rotor.Dbound/2,0, -90/rotor.p)
   back.r2.x, back.r2.y = rotate(back.r1.x,back.r1.y, -- ...
@@ -108,14 +108,14 @@ elseif sim.poles == 2*rotor.p then -- if complete sim
 end
 
 
--- magnet orientation adjustment --------------------
+-- magnet orientation adjustment ----------------------
 if rotor.magnet then -- if rotor has magnet
 
   if rotor.magnet.mgtz == 'parallel' then
     for mm = 2,sim.poles,2 do
       -- for even magnets, the 1st (d-axis) is a North
       local angle = (mm - 1)*180/rotor.p
-      local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
+      mag_x,mag_y = rotate(rotor.magnet.x,rotor.magnet.y, --...
         angle)
 
       selectlabel(mag_x, mag_y)
@@ -123,6 +123,20 @@ if rotor.magnet then -- if rotor has magnet
         0,mesh.pm,"",angle+180,rotor.group)
       clearselected()
     end
+
+  elseif rotor.magnet.mgtz == 'tangential' then
+    for mm = 2,sim.poles,2 do
+      -- for even magnets, the 1st (d-axis) is a North
+      local angle = (mm - 1)*180/rotor.p
+      mag_x,mag_y = rotate(rotor.magnet.x,rotor.magnet.y, --...
+        angle)
+
+      selectlabel(mag_x, mag_y)
+      setblockprop(rotor.magnet.material,--...
+        0,mesh.pm,"",angle+90+180,rotor.group)
+      clearselected()
+    end
+  
   
   elseif rotor.magnet.mgtz == 'radial' then
     for mm = 2,sim.poles,2 do
@@ -131,7 +145,7 @@ if rotor.magnet then -- if rotor has magnet
 
       -- 1st magnet half
       for ns = 1,rotor.magnet.segments do
-        local mag_x,mag_y = rotate(rotor.Dgap/2,0, --...
+        local mag_x,mag_y = rotate(rotor.magnet.x,rotor.magnet.y, --...
           angle - rotor.magnet.ang_e/rotor.p + sim.dth/2 + --....
           (ns-1)*sim.dth )
         local mag_dir

@@ -65,10 +65,9 @@ addarc(x[3],y[3], -x[3],y[3], --...
 
 
 -- add central block property
-local mag_block = {}
-mag_block.x, mag_block.y = 0, rotor.Dgap/2 - rotor.pos*rotor.magnet.h/2
-addblocklabel( mag_block.x, mag_block.y )
-selectlabel( mag_block.x, mag_block.y )
+rotor.magnet.x, rotor.magnet.y = 0, rotor.Dgap/2 - rotor.pos*rotor.magnet.h/2
+addblocklabel( rotor.magnet.x, rotor.magnet.y )
+selectlabel( rotor.magnet.x, rotor.magnet.y )
 setblockprop( rotor.magnet.material,--...
   0,mesh.pm,"",90,rotor.group )
 clearselected()
@@ -91,3 +90,6 @@ clearselected()
 selectgroup(rotor.group)
 moverotate(0,0,-90)
 clearselected()
+
+rotor.magnet.x, rotor.magnet.y = --...
+  rotate(rotor.magnet.x, rotor.magnet.y, -90)

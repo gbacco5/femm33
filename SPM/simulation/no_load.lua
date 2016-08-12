@@ -6,13 +6,14 @@
 
 
 -- pre-processing -------------------------------------
-tolog(format('\nMesh precision factor is %2.f.\n',precision))
+tolog('Mesh precision factor is ', precision,'.\n')
 if sim.poles == 1 then
-  tolog('The simulation is on 1 pole.\n\n')
+  tolog('The simulation is on 1 pole.\n')
 else
-  tolog(format('The simulation is on %3.f poles.\n\n',sim.poles))
+  tolog('The simulation is on ', sim.poles,' poles.\n')
 end
-
+tolog("cr")
+tolog("\n")
 
 
 
@@ -65,7 +66,7 @@ for thm = sim.thm_s,sim.thm_e,sim.dthm do
 
 
   -- post-processing ----------------------------------
-  runpost(folder.sim .. "post_complete.lua",'-windowhide')
+  runpost(folder.sim .. sim.post .. ".lua",'-windowhide')
 
 
-end
+end -- of for thm
