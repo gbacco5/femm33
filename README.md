@@ -38,7 +38,7 @@ Wait for it and look for the file 'yourfolder/yourfile.fem'
 
 After step 4 modify the variable 'TYPE' inside 'yourfolder/type.sh'
 and just put "ANALYSIS". Continue with step 5.
-Wait for it and look for the output file inside 'output/'
+Wait for it and look for the output file inside 'yourfolder/output/'
 
 
 ### Now I'd like to simulate other things/settings
@@ -55,7 +55,7 @@ Don't worry, a pretty handy shortcut is coming for Windows too!
 
 ### I had a problem during the analysis
 
-Try to look at '3F/log/analysis_date_time.log' and see where it stops.
+Try to look at '3F/log/analysis_date_time.log' and see where it stopped.
 Then have a look at '3F/temp.fem' to see the last motor analysed.
 
 
@@ -69,3 +69,18 @@ See '3F/doc/main.pdf' for some of those options.
 Generality. A unique framework for the analysis of rotating electrical
 machines through FEMM.
 Reuse of code. Easy link to optimiser (I hope).
+
+
+
+## What's next
+
+1. I have to complete the set of possible analyses.
+2. introduce the number of conductor in slots
+3. some small bugs (like air-gap closing) must be fixed.
+4. other synchronous machines have to be implemented, building under
+   '3F/drawing/rotor.lua' (IPM radial, IPM tangential, RELuctance, PMAREL)
+5. other slot shapes can be drawn (closed slot, deep bars), so extending
+   the capabilities of '3F/drawing/fun_draw_slot.lua'
+6. other analysis types must be created for the Induction Motor (IM),
+   even though the common ground for its drawing is already here
+   (apart from point 5 of course)
