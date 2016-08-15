@@ -31,7 +31,9 @@ if [ "$TYPE" == "ANALYSIS" ]; then
   cp temp.fem $DIR/temp.fem
   cp temp.ans $DIR/temp.ans
   # remove *.fem from framework folder
-  rm *.fem ;
+  rm *.fem 
+  rm motor_data.lua
+  rm materials_and_bc.lua ;
 elif [ "$TYPE" == "DRAWING" ]; then
   cp *.fem $DIR/
   rm *.fem ;
@@ -42,7 +44,9 @@ else
   # copy temps
   cp temp.ans $DIR/temp.ans
   cp *.fem $DIR/
-  rm *.fem ;
+  rm *.fem 
+  rm motor_data.lua
+  rm materials_and_bc.lua ;
 fi 
 
 

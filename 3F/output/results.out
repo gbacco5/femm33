@@ -1,7 +1,0 @@
-RESULTS for no_load analysis
-launched at 18:21:18 on 2016/08/12 by Giacomo on Bianchi.
-
-  1            2                3                4                5                6                7                8                9               10               11               12               13               14               15          
- thm         torque       stator torque       torque_dq       lambda_a         lambda_b         lambda_c         lambda_d         lambda_q       magn energy      magn coenergy         Fx               Fy            stator Fx        stator Fy      
-
- 0.00    -3.90533e-004     2.27408e-003     0.00000e+000     3.73087e-004    -1.86508e-004    -1.86579e-004     3.73087e-004     4.08001e-008     2.35496e+000     2.35496e+000     6.41230e+001     1.15411e+001    -4.90995e+001    -4.12433e+001    

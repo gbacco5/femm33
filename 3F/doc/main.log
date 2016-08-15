@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.3)  12 AUG 2016 16:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.8.3)  13 AUG 2016 11:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,6 +8,16 @@ LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/fleqn.clo
+File: fleqn.clo 2015/03/31 v1.1i Standard LaTeX option (flush left equations)
+\mathindent=\dimen102
+Applying: [2015/01/01] Make \[ robust on input line 50.
+LaTeX Info: Redefining \[ on input line 51.
+Already applied: [0000/00/00] Make \[ robust on input line 62.
+Applying: [2015/01/01] Make \] robust on input line 74.
+LaTeX Info: Redefining \] on input line 75.
+Already applied: [0000/00/00] Make \] robust on input line 83.
+)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
@@ -22,8 +32,88 @@ File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
-\bibindent=\dimen102
+\bibindent=\dimen103
 )
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/06/28 v2.15d AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen104
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen105
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks17
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip46
+\thm@postskip=\skip47
+\thm@headsep=\skip48
+\dth@everypar=\toks24
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
 (/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2016/04/23 3.9r The Babel package
 
@@ -32,8 +122,8 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/04/23 3.9r Babel common definitions
-\babel@savecnt=\count88
-\U@D=\dimen103
+\babel@savecnt=\count100
+\U@D=\dimen113
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -56,7 +146,7 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count89
+\Gread@gobject=\count101
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
@@ -73,7 +163,7 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks14
+\KV@toks@=\toks25
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
@@ -86,8 +176,28 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
 )
-\Gin@req@height=\dimen104
-\Gin@req@width=\dimen105
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen116
+\lightrulewidth=\dimen117
+\cmidrulewidth=\dimen118
+\belowrulesep=\dimen119
+\belowbottomsep=\dimen120
+\aboverulesep=\dimen121
+\abovetopsep=\dimen122
+\cmidrulesep=\dimen123
+\cmidrulekern=\dimen124
+\defaultaddspace=\dimen125
+\@cmidla=\count102
+\@cmidlb=\count103
+\@aboverulesep=\dimen126
+\@belowrulesep=\dimen127
+\@thisruleclass=\count104
+\@lastruleclass=\count105
+\@thisrulewidth=\dimen128
 )
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
@@ -95,45 +205,45 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen106
-\captionmargin@=\dimen107
-\captionwidth=\dimen108
-\caption@tempdima=\dimen109
-\caption@indent=\dimen110
-\caption@parindent=\dimen111
-\caption@hangindent=\dimen112
+\captionmargin=\dimen129
+\captionmargin@=\dimen130
+\captionwidth=\dimen131
+\caption@tempdima=\dimen132
+\caption@indent=\dimen133
+\caption@parindent=\dimen134
+\caption@hangindent=\dimen135
 )
-\c@ContinuedFloat=\count90
+\c@ContinuedFloat=\count106
 )
 (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count91
-\scratchdimen=\dimen113
-\scratchbox=\box26
-\nofMPsegments=\count92
-\nofMParguments=\count93
-\everyMPshowfont=\toks15
-\MPscratchCnt=\count94
-\MPscratchDim=\dimen114
-\MPnumerator=\count95
-\makeMPintoPDFobject=\count96
-\everyMPtoPDFconversion=\toks16
+\scratchcounter=\count107
+\scratchdimen=\dimen136
+\scratchbox=\box28
+\nofMPsegments=\count108
+\nofMParguments=\count109
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count110
+\MPscratchDim=\dimen137
+\MPnumerator=\count111
+\makeMPintoPDFobject=\count112
+\everyMPtoPDFconversion=\toks27
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -185,24 +295,24 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 14.
+LaTeX Font Info:    Try loading font information for U+msa on input line 22.
 
-[1
-
-{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./main.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 3.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+LaTeX Font Info:    Try loading font information for U+msb on input line 22.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main
+.toc)
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
- [1
+
+[1
 
 ]
 Chapter 1.
@@ -211,7 +321,7 @@ File: ../examples/slots/squared_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/squared_slot.pdf>
 Package pdftex.def Info: ../examples/slots/squared_slot.pdf used on input line 
-37.
+45.
 (pdftex.def)             Requested size: 39.30334pt x 73.91315pt.
 
 <../examples/slots/rounded_slot.pdf, id=16, 38.9993pt x 73.89633pt>
@@ -219,14 +329,14 @@ File: ../examples/slots/rounded_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/rounded_slot.pdf>
 Package pdftex.def Info: ../examples/slots/rounded_slot.pdf used on input line 
-37.
+45.
 (pdftex.def)             Requested size: 38.99919pt x 73.89613pt.
 
 <../examples/slots/round_slot.pdf, id=17, 39.31654pt x 73.90094pt>
 File: ../examples/slots/round_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/round_slot.pdf>
-Package pdftex.def Info: ../examples/slots/round_slot.pdf used on input line 37
+Package pdftex.def Info: ../examples/slots/round_slot.pdf used on input line 45
 .
 (pdftex.def)             Requested size: 39.31644pt x 73.90074pt.
 
@@ -235,7 +345,7 @@ File: ../examples/slots/semiround_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/semiround_slot.pdf>
 Package pdftex.def Info: ../examples/slots/semiround_slot.pdf used on input lin
-e 37.
+e 45.
 (pdftex.def)             Requested size: 38.29854pt x 73.90402pt.
 
 <../examples/slots/roundsemi_slot.pdf, id=19, 39.29227pt x 73.91333pt>
@@ -243,7 +353,7 @@ File: ../examples/slots/roundsemi_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/roundsemi_slot.pdf>
 Package pdftex.def Info: ../examples/slots/roundsemi_slot.pdf used on input lin
-e 37.
+e 45.
 (pdftex.def)             Requested size: 39.29216pt x 73.91315pt.
 
 <../examples/slots/semiarc_slot.pdf, id=20, 39.25375pt x 74.18025pt>
@@ -251,7 +361,7 @@ File: ../examples/slots/semiarc_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/semiarc_slot.pdf>
 Package pdftex.def Info: ../examples/slots/semiarc_slot.pdf used on input line 
-37.
+45.
 (pdftex.def)             Requested size: 39.25363pt x 74.18005pt.
 
 <../examples/slots/roundarc_slot.pdf, id=21, 39.25221pt x 74.18025pt>
@@ -259,7 +369,7 @@ File: ../examples/slots/roundarc_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/roundarc_slot.pdf>
 Package pdftex.def Info: ../examples/slots/roundarc_slot.pdf used on input line
- 37.
+ 45.
 (pdftex.def)             Requested size: 39.2521pt x 74.18005pt.
  [2
 
@@ -291,24 +401,24 @@ pdfTeX warning: /opt/texbin/pdflatex (file ../examples/slots/roundarc_slot.pdf)
 File: ../examples/stators/1pole.pdf Graphic file (type pdf)
 
 <use ../examples/stators/1pole.pdf>
-Package pdftex.def Info: ../examples/stators/1pole.pdf used on input line 45.
+Package pdftex.def Info: ../examples/stators/1pole.pdf used on input line 53.
 (pdftex.def)             Requested size: 138.11499pt x 194.0117pt.
 
 <../examples/stators/2pole.pdf, id=35, 405.58517pt x 310.13544pt>
 File: ../examples/stators/2pole.pdf Graphic file (type pdf)
 
 <use ../examples/stators/2pole.pdf>
-Package pdftex.def Info: ../examples/stators/2pole.pdf used on input line 52.
+Package pdftex.def Info: ../examples/stators/2pole.pdf used on input line 60.
 (pdftex.def)             Requested size: 304.18813pt x 232.60098pt.
 
 <../examples/stators/ppole.pdf, id=36, 568.79573pt x 310.12373pt>
 File: ../examples/stators/ppole.pdf Graphic file (type pdf)
 
 <use ../examples/stators/ppole.pdf>
-Package pdftex.def Info: ../examples/stators/ppole.pdf used on input line 59.
+Package pdftex.def Info: ../examples/stators/ppole.pdf used on input line 67.
 (pdftex.def)             Requested size: 426.59575pt x 232.59222pt.
 
-Overfull \hbox (95.59575pt too wide) in paragraph at lines 58--64
+Overfull \hbox (95.59575pt too wide) in paragraph at lines 66--72
 [][]
  []
 
@@ -320,10 +430,10 @@ inclusion: multiple pdfs with page group included in a single page
 File: ../examples/stators/2ppole.pdf Graphic file (type pdf)
 
 <use ../examples/stators/2ppole.pdf>
-Package pdftex.def Info: ../examples/stators/2ppole.pdf used on input line 66.
+Package pdftex.def Info: ../examples/stators/2ppole.pdf used on input line 74.
 (pdftex.def)             Requested size: 427.39261pt x 427.39233pt.
 
-Overfull \hbox (96.39261pt too wide) in paragraph at lines 65--71
+Overfull \hbox (96.39261pt too wide) in paragraph at lines 73--79
 [][] 
  []
 
@@ -333,7 +443,7 @@ File: ../examples/magnets/parallel_rect.pdf Graphic file (type pdf)
 
 <use ../examples/magnets/parallel_rect.pdf>
 Package pdftex.def Info: ../examples/magnets/parallel_rect.pdf used on input li
-ne 79.
+ne 87.
 (pdftex.def)             Requested size: 161.57059pt x 36.56955pt.
 
 <../examples/magnets/parallel_trapz.pdf, id=56, 161.57098pt x 36.56966pt>
@@ -341,7 +451,7 @@ File: ../examples/magnets/parallel_trapz.pdf Graphic file (type pdf)
 
 <use ../examples/magnets/parallel_trapz.pdf>
 Package pdftex.def Info: ../examples/magnets/parallel_trapz.pdf used on input l
-ine 87.
+ine 95.
 (pdftex.def)             Requested size: 161.57059pt x 36.56955pt.
 
 <../examples/magnets/radial_trapz.pdf, id=57, 161.57098pt x 36.56976pt>
@@ -349,7 +459,7 @@ File: ../examples/magnets/radial_trapz.pdf Graphic file (type pdf)
 
 <use ../examples/magnets/radial_trapz.pdf>
 Package pdftex.def Info: ../examples/magnets/radial_trapz.pdf used on input lin
-e 95.
+e 103.
 (pdftex.def)             Requested size: 161.57059pt x 36.56966pt.
  [6 <../examples/magnets/parallel_rect.pdf> <../examples/magnets/parallel_trapz
 .pdf
@@ -364,21 +474,21 @@ pdfTeX warning: /opt/texbin/pdflatex (file ../examples/magnets/radial_trapz.pdf
 File: ../examples/rotors/1pole.pdf Graphic file (type pdf)
 
 <use ../examples/rotors/1pole.pdf>
-Package pdftex.def Info: ../examples/rotors/1pole.pdf used on input line 107.
+Package pdftex.def Info: ../examples/rotors/1pole.pdf used on input line 115.
 (pdftex.def)             Requested size: 94.88284pt x 132.91154pt.
 
 <../examples/rotors/2pole.pdf, id=67, 175.79318pt x 265.42221pt>
 File: ../examples/rotors/2pole.pdf Graphic file (type pdf)
 
 <use ../examples/rotors/2pole.pdf>
-Package pdftex.def Info: ../examples/rotors/2pole.pdf used on input line 114.
+Package pdftex.def Info: ../examples/rotors/2pole.pdf used on input line 122.
 (pdftex.def)             Requested size: 131.84454pt x 199.06616pt.
 
 <../examples/rotors/ppole.pdf, id=68, 328.56544pt x 263.3337pt>
 File: ../examples/rotors/ppole.pdf Graphic file (type pdf)
 
 <use ../examples/rotors/ppole.pdf>
-Package pdftex.def Info: ../examples/rotors/ppole.pdf used on input line 121.
+Package pdftex.def Info: ../examples/rotors/ppole.pdf used on input line 129.
 (pdftex.def)             Requested size: 246.42348pt x 197.49977pt.
  [7 <../examples/rotors/1pole.pdf> <../examples/rotors/2pole.pdf
 
@@ -388,7 +498,7 @@ nclusion: multiple pdfs with page group included in a single page
 File: ../examples/rotors/2ppole.pdf Graphic file (type pdf)
 
 <use ../examples/rotors/2ppole.pdf>
-Package pdftex.def Info: ../examples/rotors/2ppole.pdf used on input line 128.
+Package pdftex.def Info: ../examples/rotors/2ppole.pdf used on input line 136.
 (pdftex.def)             Requested size: 263.07828pt x 262.08801pt.
  [8 <../examples/rotors/ppole.pdf> <../examples/rotors/2ppole.pdf
 
@@ -400,13 +510,13 @@ Chapter 2.
 
 ] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 3556 strings out of 493013
- 54720 string characters out of 6133329
- 121867 words of memory out of 5000000
- 7058 multiletter control sequences out of 15000+600000
- 10185 words of font info for 36 fonts, out of 8000000 for 9000
+ 4578 strings out of 493013
+ 66614 string characters out of 6133329
+ 136022 words of memory out of 5000000
+ 8034 multiletter control sequences out of 15000+600000
+ 12726 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,11n,38p,230b,208s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,13n,38p,230b,236s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
@@ -414,12 +524,13 @@ m/cmcsc10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt1
-0.pfb>
-Output written on main.pdf (10 pages, 148403 bytes).
+17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb>
+Output written on main.pdf (10 pages, 163328 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 76 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

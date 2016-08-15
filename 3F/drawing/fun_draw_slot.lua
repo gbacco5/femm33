@@ -71,7 +71,7 @@ y[3] = y[2] + lp.pos*lp.slot.hwed
 x[4] = lp.slot.wse/2
 
 if lp.slot.shape == "round" or lp.slot.shape == "semiround" then
-	-- thus if inner (in the iron) slot top is round
+	-- thus if inner (in the iron) the slot top is round
 	y[4] = D/2 + lp.pos*lp.slot.hs - lp.pos*lp.slot.wse/2
 else
 	y[4] = D/2 + lp.pos*lp.slot.hs
@@ -101,15 +101,25 @@ join_angle = lp.slot.join_angle or atan(lp.winding.Q/PI)/2
 		addarc(x[2],y[2],x[3],y[3], join_angle,1)
 	elseif lp.pos == -1 then
 		addarc(x[3],y[3],x[2],y[2], join_angle,1)
-	end -- of if selector
+	end -- of if lp.pos
+	
+	lp.slot.area = lp.slot.area +--...
+		lp.slot.wso*lp.slot.hwed/2 +--...
+		lp.slot.ws*join_angle
 
 elseif lp.slot.shape == "semiround"
 		or lp.slot.shape == "square"
 		or lp.slot.shape == "semiarc" then
 	addsegment(x[2],y[2],x[3],y[3])
 
+	lp.slot.area = lp.slot.area + lp.slot.hwed/2*--...
+		(lp.slot.ws + lp.slot.wso) -- add trapezoidal wedge area
+
 else
 	addsegment(x[2],y[2],x[3],y[3])
+	lp.slot.area = lp.slot.area + lp.slot.hwed/2*--...
+		(lp.slot.ws + lp.slot.wso) -- add trapezoidal wedge area
+		
 end -- of if lp.slot.shape
 	
 -- round corners

@@ -9,6 +9,7 @@
 -- load data ------------------------------------------
 dofile("motor_data.lua")
 dofile(folder.inp .. "K.lua")
+dofile(folder.tools .. 'fun_pass2post.lua')
 
 
 -- prepare results ------------------------------------
@@ -65,8 +66,18 @@ tolog("cr") -- carriage return (line filled with *)
 tolog("Analysis '"..sim.tipo.."' started at "..date().."\n")
 tolog("by "..username.." on "..filename..".\n\n")
 tolog("The number of simulations is ", sim.ntot, ".\n")
--- tolog("cr")
 
+
+
+-- pre-processing -------------------------------------
+tolog('Mesh precision factor is ', precision,'.\n')
+if sim.poles == 1 then
+  tolog('The simulation is on 1 pole.\n')
+else
+  tolog('The simulation is on ', sim.poles,' poles.\n')
+end
+tolog("cr")
+tolog("\n")
 
 
 -- launch simulation ----------------------------------

@@ -1,12 +1,14 @@
 -- MOTOR_DATA.lua *************************************
 -- This file start the drawing of the motor.
 -- '?!' options have already to be implemented.
+-- '<<.>>' labels identify the kind of motors which
+-- need that feature.
 --
--- bg, 2016/08/08
+-- bg, 2016/08/15
 -- ****************************************************
 
 username = "Giacomo"
-motor_model = "test"
+motor_model = "template"
 
 filename = "SPM".."_"..motor_model
 date_time = date("%Y%m%d_%H%M%S")
@@ -95,6 +97,9 @@ stator = {
     Q = 36, -- # of stator slots
     chording = 0, -- # of slots chorded
     sequence = {-2,1,-3,2,-1,3},
+
+    ncs = 1, -- # of series conductors per slot
+
     supply = 'circuit', -- 'circuit'/'material'
     -- this selects if you want to impose current in the
     -- slots either with a circuit or with the material.
@@ -138,6 +143,8 @@ stator = {
 }
 -- compute the slot angle
 stator:comp_alphas()
+-- compute the slot area
+
 -- compute the winding pitch
 stator.winding.comp_yq(stator)
 -- let stator.Q
@@ -167,12 +174,13 @@ rotor.group = 10
 rotor.magnet = {
   material = 'Magnet', -- magnet material
   -- magnetisation direction
-  mgtz = 'parallel', -- 'parallel'/'radial'/'tangential'
-  shape = 'trapz', -- 'rect'/'trapz'/'?!sin'
+  mgtz = 'parallel', -- 'parallel'/'radial'/'tangential', <<S/IPM>>
+  shape = 'trapz', -- 'rect'/'trapz'/'?!sin', <<SPM>>
   h = 5, -- [mm], magnet height
-  ang_e = 75, --[el°], magnet half electrical angle span
+  ang_e = 75, --[el°], magnet half electrical angle span, <<SPM>>
+  -- w = , --[mm], magnet width, ?!<<IPM>>
 
-  pole = 1,
+  pole = 1, -- ?????
 
   -- Method: compute the number of magnet segments
   comp_segments = function(self, sim)
@@ -271,14 +279,22 @@ stator.mesh = {air = mesh.air}
 --  ######  #### ##     ##  #######  ######## ##     ##    ##    ####  #######  ##    ##    
 -- Simulation -----------------------------------------
 sim = {
-  tipo = 'no_load', -- 'no_load'/'?!on_load'/'?!map'
-  poles = 2*stator.p,
+  tipo = 'on_load',
+  -- tipology = 'no_load'/'?!on_load'/'?!compute_L'/'?!map'
+
+  poles = 1,
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
+
   dth = 1,
   -- this is also necessary for the segmentation of the magnet
-  thm_s = 0,
+  thm_s = 0, -- [deg]
   thm_e = 0,--180/stator.winding.m/stator.p - 1, -- 180/3/3 = 19
-  dthm = 1,
+  dthm = 1, -- [deg], rotation step 
+  
+  control = 'sin', -- 'sin'/'?!bldc'/'?!square'
+  I = 1, -- [A], peak current in the series equivalent wye winding
+  alpha_ie = 90, -- [el.deg], (desired) current angle
+
   n = 0, -- # of simulation
 
   post = 'post_efficient', -- 'post_complete'/'post_efficient'

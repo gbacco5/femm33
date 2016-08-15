@@ -118,7 +118,7 @@ if A_svm == 0 then
 		for k = 1, B.h do
 			Cmat[k] = A*B[k]
 		end
-		return C -- scalar times vector
+		return Cmat -- scalar times vector
 
 	elseif B_svm == 2 then -- B is a matrix
 		for k = 1, B.h do

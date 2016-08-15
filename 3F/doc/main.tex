@@ -1,11 +1,19 @@
-\documentclass[a4paper,11pt,oneside]{report}
+\documentclass[a4paper,11pt,oneside,fleqn]{report}
+
+\usepackage{amsmath,amsthm,amssymb}
 
 \usepackage[UKenglish]{babel}
 
 \usepackage{xcolor}
 \usepackage{graphicx}
 
+\usepackage{booktabs}
 \usepackage{caption}
+
+\newcommand{\Ncoils}{N_{\textup{coils}}}
+\newcommand{\Nturns}{N_{\textup{turns}}}
+\newcommand{\Nlayers}{N_{\textup{layers}}}
+
 
 \title{3F --- Framework for \textsc{Femm}}
 \author{}
@@ -133,7 +141,36 @@ $ 2p $ \texttt{poles}
 
 
 
+
+
 \chapter{Winding}
+We will characterise a winding through
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+Name         & Math symbol    & Code symbol 
+\\\midrule
+%
+N. of phases & $ m $          & \texttt{m} 
+\\
+N. of coils  & $ \Ncoils $ & 
+\texttt{coils} \\
+N. of turns per coil & $ \Nturns $ & 
+\texttt{turns} \\
+N. of layers & $ \Nlayers $ & \texttt{layers} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Typically, given a lamination stack with $ Q $ slots
+\begin{equation*}
+\Ncoils = \frac{Q}{2}\,\Nlayers
+\end{equation*}
+so if the number of layers is one, the number of coils is 
+half the number of slots, given the fact that a coil side 
+occupies a full slot.
 
 
 

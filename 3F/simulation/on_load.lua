@@ -1,7 +1,8 @@
--- NO_LOAD.lua ****************************************
--- This file starts the no-load simulation.
+-- ON_LOAD.lua ****************************************
+-- This file starts the on-load simulation varying the
+-- rotor position.
 --
--- bg, 2016/08/07
+-- bg, 2016/08/15
 -- ****************************************************
 
 
@@ -9,6 +10,8 @@
 for thm = sim.thm_s,sim.thm_e,sim.dthm do
 
   sim.n = sim.n + 1
+  thme = stator.p*thm
+
   tolog('\n+++ Simulation n. ',sim.n,' +++\n')
 
   -- open FEMM file -----------------------------------
@@ -23,6 +26,13 @@ for thm = sim.thm_s,sim.thm_e,sim.dthm do
   tolog('Rotor rotated by ',thm,'deg.\n')
 
 
+  -- compute currents ---------------------------------
+  dofile(folder.sim .. "subpre_currents_".. sim.control ..".lua")
+
+  -- impose currents ----------------------------------
+  dofile(folder.sim .. "subpre_impose_i.lua")
+
+
   -- air-gap closing ----------------------------------
   if sim.partial then
     dofile(folder.draw .. "airgap_close.lua")
@@ -32,10 +42,12 @@ for thm = sim.thm_s,sim.thm_e,sim.dthm do
   -- pass to post-processing
   p2p = {
   thm = thm,
+  i_d = i_d,
+  i_q = i_q,
   }
 
   pass2post(p2p)
-  
+
 
   -- analyse ------------------------------------------
   savefemmfile('temp.fem')
