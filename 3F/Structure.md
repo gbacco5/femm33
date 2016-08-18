@@ -1,21 +1,26 @@
 # Structure
 ?! means not yet implemented
 
-Linux:    # 0.RUN.sh (Wine necessary)
-Windows:  # 0.RUN.cmd
-            * DRAWING
-              + motor_data
-              + materials_and_bc
-              + drawing/stator
-                - drawing/fun_draw_slot
-              + drawing/rotor
-                - drawing/SPM_rotor
-              + drawing/airgap
-              
-            * ANALYSIS
-              + (DRAWING)
-              + some analysis
-              + some post-processing
+Linux:
+
+    # 0.RUN.sh (Wine necessary)
+
+Windows:
+
+    # 0.RUN.cmd
+      * DRAWING
+        + motor_data
+        + materials_and_bc
+        + drawing/stator
+          - drawing/fun_draw_slot
+        + drawing/rotor
+          - drawing/SPM_rotor
+        + drawing/airgap
+       
+      * ANALYSIS
+        + (DRAWING)
+        + some analysis
+        + some post-processing
 
 
 ## drawing
@@ -27,7 +32,6 @@ Make your changes here.
 ### materials_and_bc
 Here are defined:
 - materials
-- mesh sizes
 - boundary conditions
 
 ### drawing/stator
@@ -36,6 +40,10 @@ internal. It may have different slot shapes. It can be
 complete or just a slice.
 
 ### drawing/rotor
+- SPM
+- ?!IPM
+- ?!REL
+- ?!PMAREL
 
 ### draw the air-gap
 - common air-gap
@@ -59,5 +67,6 @@ Therefore dq --> AlphaBeta --> abc...m --> slots
            T_dq^AB     T_AB^a...m       K
 
 Two current impositions:
+
 1. sinusoidal through the dq transform
 2. BLDC control
