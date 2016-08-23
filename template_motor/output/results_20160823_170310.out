@@ -1,5 +1,5 @@
 RESULTS for on_load analysis
-launched at 15:11:14 on 2016/08/23 by Giacomo on template.
+launched at 17:03:11 on 2016/08/23 by Giacomo on template.
 
   1            2                3                4                5                6                7                8                9               10               11               12               13               14               15          
  thm         torque       stator torque       torque_dq       lambda_a         lambda_b         lambda_c         lambda_d         lambda_q       magn energy      magn coenergy         Fx               Fy            stator Fx        stator Fy      

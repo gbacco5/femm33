@@ -122,12 +122,23 @@ stator = {
     self.hbi = (self.De - self.Di)/2 - decrease
   end,
 
+  -- Method: get air-gap diameter
+  comp_D = function(self)
+    if self.pos == 1 then -- conventional motor
+      self.Dbound = self.De
+      self.Dgap = self.Di
+    elseif self.pos == -1 then -- outer rotor
+      self.Dbound = self.Di
+      self.Dgap = self.De
+    end
+  end,
+  
   -- Method: compute remaining slot parameters
   comp_ws_wse = function(self)
-    self.slot.ws = (self.Di + self.pos*2*self.slot.hso
+    self.slot.ws = (self.Dgap + self.pos*2*self.slot.hso
           + self.pos*2*self.slot.hwed)*PI/self.winding.Q
           - self.slot.wt
-    self.slot.wse = (self.Di + self.pos*2*self.slot.hs)*PI/self.winding.Q
+    self.slot.wse = (self.Dgap + self.pos*2*self.slot.hs)*PI/self.winding.Q
           - self.slot.wt
     if self.slot.shape == 'semiround' then
       self.slot.wse = self.slot.wse/(1 + self.pos*PI/self.winding.Q)
@@ -227,7 +238,7 @@ elseif stator.pos == -1 then -- outer rotor
   else
     g = (rotor.Di - stator.De)/2
   end
-  ag_R = rotor.Di/2 - g/2
+  ag_R = stator.De/2 + g/2
   
 end
 -- check whether g is negative

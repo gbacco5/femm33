@@ -3,4 +3,4 @@ Type=Application
 Name=3F
 Terminal=false
 Exec=bash -c 'cd $(dirname %k) && ./.run.sh'
-Icon=/home/ubuntu/Documenti/git/femm33/3F/more/3F.png
+Icon=/home/ubuntu/Documenti/git/femm33/3F/more/icon/3F.png

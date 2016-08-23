@@ -1,5 +1,5 @@
 **************************************************
-Analysis 'on_load' started at 08/23/16 15:12:29
+Analysis 'on_load' started at 08/23/16 17:03:11
 by Giacomo on SPM_template.
 
 The number of simulations is 1.
@@ -12,8 +12,8 @@ The simulation is on 1 pole.
 SPM_template opened...
 Rotor rotated by 0deg.
 Successfully closed the air-gap.
-FEA duration was  1.6 s.
+FEA duration was  2.3 s.
 
 
-Analysis finished at 08/23/16 15:12:32
+Analysis finished at 08/23/16 17:03:15
 **************************************************

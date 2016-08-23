@@ -11,13 +11,7 @@
 
 
 -- determine the diameter closer to the air-gap
-if rotor.pos == -1 then -- conventional motor
-  rotor.Dgap = rotor.De
-  rotor.Dbound = rotor.Di
-elseif rotor.pos == 1 then -- external motor
-  rotor.Dgap = rotor.Di
-  rotor.Dbound = rotor.De
-end
+rotor:comp_D()
 
 
 -- if SPM (motor of interest) -------------------------

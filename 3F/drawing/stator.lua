@@ -8,17 +8,12 @@
 -- load functions -------------------------------------
 dofile(folder.tools .. "fun_draw_slot.lua")
 
+-- stator closing diameter ----------------------------
+stator:comp_D()
+
 -- draw a single slot ---------------------------------
 draw_slot(stator)
 
--- stator closing diameter ----------------------------
-if stator.pos == 1 then -- conventional motor
-  stator.Dbound = stator.De
-  stator.Dgap = stator.Di
-elseif stator.pos == -1 then -- outer rotor
-  stator.Dbound = stator.Di
-  stator.Dgap = stator.De
-end
 
 -- copy slots -----------------------------------------
 selectgroup(stator.group)
