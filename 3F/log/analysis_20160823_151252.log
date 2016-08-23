@@ -1,0 +1,19 @@
+**************************************************
+Analysis 'on_load' started at 08/23/16 15:12:52
+by Giacomo on SPM_template.
+
+The number of simulations is 1.
+Mesh precision factor is 1.
+The simulation is on 1 pole.
+**************************************************
+
+
++++ Simulation n. 1 +++
+SPM_template opened...
+Rotor rotated by 0deg.
+Successfully closed the air-gap.
+FEA duration was  1.6 s.
+
+
+Analysis finished at 08/23/16 15:12:55
+**************************************************

@@ -1,13 +1,10 @@
 # Structure
 ?! means not yet implemented
+{text} means invisible
 
 Linux:
 
-    # 0.RUN.sh (Wine necessary)
-
-Windows:
-
-    # 0.RUN.cmd
+    # 3Flin{.desktop} (Wine necessary) <-- {.run.sh} <-- type.sh
       * DRAWING
         + motor_data
         + materials_and_bc
@@ -16,14 +13,23 @@ Windows:
         + drawing/rotor
           - drawing/SPM_rotor
         + drawing/airgap
-       
+         
       * ANALYSIS
-        + (DRAWING)
         + some analysis
         + some post-processing
 
+      * DRAWING+ANALYSIS
+        * DRAWING
+        * ANALYSIS
 
-## drawing
+
+Windows:
+
+    # 3Fwin{.lnk} <-- {.run.cmd} <-- type.sh
+      [... same as before ...]
+
+
+## DRAWING
 
 ### motor_data
 All the motor and simulation data are defined here.
@@ -31,6 +37,7 @@ Make your changes here.
 
 ### materials_and_bc
 Here are defined:
+
 - materials
 - boundary conditions
 
@@ -42,8 +49,11 @@ complete or just a slice.
 ### drawing/rotor
 - SPM
 - ?!IPM
+    + radial magnetisation
+    + tangential magnetisation
 - ?!REL
 - ?!PMAREL
+- ?!IM
 
 ### draw the air-gap
 - common air-gap
@@ -51,20 +61,21 @@ complete or just a slice.
 
 
 
-## analyses
+## ANALYSIS
 Take the drawing and start processing.
-?! If the drawing does not exist, launch it.
 
 ### no-load analysis
 For various rotor position it computes all the quantities. You can
 compute the cogging torque and the no-load bemf.
+
+If you perform this on 60°el, you can recover the complete behavior
+of flux linkages through the use of the dq-transform.
 
 
 ### on-load analysis
 Impose currents in the cicuits.
 Typically the current is given in the dq reference frame.
 Therefore dq --> AlphaBeta --> abc...m --> slots
-           T_dq^AB     T_AB^a...m       K
 
 Two current impositions:
 

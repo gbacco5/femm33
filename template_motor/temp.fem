@@ -240,7 +240,7 @@
     <CircuitName> = "Islot_3"
     <VoltGradient_re> = 0
     <VoltGradient_im> = 0
-    <TotalAmps_re> = 6.123233995736766e-017
+    <TotalAmps_re> = 6.1230317691118863e-017
     <TotalAmps_im> = 0
     <CircuitType> = 0
   <EndCircuit>
@@ -248,7 +248,7 @@
     <CircuitName> = "Islot_4"
     <VoltGradient_re> = 0
     <VoltGradient_im> = 0
-    <TotalAmps_re> = 6.123233995736766e-017
+    <TotalAmps_re> = 6.1230317691118863e-017
     <TotalAmps_im> = 0
     <CircuitType> = 0
   <EndCircuit>
@@ -440,8 +440,8 @@
 73	61	30	0.23619999999999999	6	0	0
 [NumHoles] = 0
 [NumBlockLabels] = 16
-75	4.5924254968025744e-015	2	2	1	0	1001
-63	3.8576374173141627e-015	1	0.5	0	0	1000
+75	4.5922738268339147e-015	2	2	1	0	1001
+63	3.8575100145404884e-015	1	0.5	0	0	1000
 73.860581475915595	13.023613325019781	2	2	2	0	1002
 62.042888439769108	10.939835193016615	1	0.5	0	0	1000
 70.476946558943126	25.651510749425157	2	2	3	0	1003
