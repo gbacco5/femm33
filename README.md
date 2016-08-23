@@ -4,8 +4,6 @@
 
 Some drawing and analysis code through FEMM 3.3
 
-The icon is temporary due to copyright restrictions.
-
 2016/08/23
 
 
@@ -18,13 +16,13 @@ The icon is temporary due to copyright restrictions.
 
 
 ## Requirements:
-If you're using Linux you have to install Wine and configure FEMM
-in `3F/femm33Mar`.
+If you're using Linux you have to install Wine and configure `femme`
+in `3F/femm33Mar/bin/`.
 
 
 ## What if:
 
-### I already have a `.FEM` drawing
+### I already have a `.fem` drawing
 
 Fine, after step 2 read `yourfolder/README.txt` and follow the instructions.
 
