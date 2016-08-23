@@ -73,13 +73,13 @@ Reuse of code. Easy link to optimiser (I hope).
 
 ## What's next
 
-1. I have to complete the set of possible analyses.
-2. introduce the number of conductor in slots
-3. some small bugs (like air-gap closing) must be fixed.
-4. other synchronous machines have to be implemented, building under
-   `3F/drawing/rotor.lua` (IPM radial, IPM tangential, RELuctance, PMAREL)
-5. other slot shapes can be drawn (closed slot, deep bars), so extending
-   the capabilities of `3F/drawing/fun_draw_slot.lua`
-6. other analysis types must be created for the Induction Motor (IM),
-   even though the common ground for its drawing is already here
-   (apart from point 5 of course)
+- [] I have to complete the set of possible analyses.
+- [] introduce the number of conductor in slots
+- [] some small bugs (like air-gap closing) must be fixed.
+- [] other synchronous machines have to be implemented, building under
+     `3F/drawing/rotor.lua` (IPM radial, IPM tangential, RELuctance, PMAREL)
+- [] other slot shapes can be drawn (closed slot, deep bars), so extending
+     the capabilities of `3F/drawing/fun_draw_slot.lua`
+- [] other analysis types must be created for the Induction Motor (IM),
+     even though the common ground for its drawing is already here
+     (apart from point 5 of course)

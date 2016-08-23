@@ -5,3 +5,6 @@
 \contentsline {section}{\numberline {1.3}SPM Magnets}{6}
 \contentsline {section}{\numberline {1.4}SPM Rotors}{7}
 \contentsline {chapter}{\numberline {2}Winding}{9}
+\contentsline {section}{\numberline {2.1}Space vectors}{10}
+\contentsline {section}{\numberline {2.2}Sinusoidal dq control}{10}
+\contentsline {section}{\numberline {2.3}Trapezoidal control}{10}

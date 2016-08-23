@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt,oneside,fleqn]{report}
+\documentclass[a4paper,11pt,oneside,fleqn,titlepage]{report}
 
 \usepackage{amsmath,amsthm,amssymb}
 
@@ -6,6 +6,8 @@
 
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{siunitx}
+\sisetup{per-mode=symbol}
 
 \usepackage{booktabs}
 \usepackage{caption}
@@ -13,13 +15,36 @@
 \newcommand{\Ncoils}{N_{\textup{coils}}}
 \newcommand{\Nturns}{N_{\textup{turns}}}
 \newcommand{\Nlayers}{N_{\textup{layers}}}
+\newcommand{\npp}{n_{\textup{pp}}}
+\newcommand{\nc}{n_{\textup{c}}}
+\newcommand{\ncs}{n_{\textup{cs}}}
+\newcommand{\Nc}{N_{\textup{c}}}
+\newcommand{\Sc}{S_{\textup{c}}}
+\newcommand{\Sceq}{S_{\textup{c,eq}}}
+\newcommand{\Uw}{U_{\textup{w}}}
+\newcommand{\Iw}{I_{\textup{w}}}
+
+\newcommand{\kfill}{k_{\textup{fill}}}
+\newcommand{\Jslot}{J_{\textup{slot}}}
+\newcommand{\Islot}{I_{\textup{slot}}}
+\newcommand{\Sslot}{S_{\textup{slot}}}
 
 
 \title{3F --- Framework for \textsc{Femm}}
 \author{}
 
 \begin{document}
-\maketitle
+
+\begin{titlepage}
+\centering
+\includegraphics[width=0.5\textwidth]{../more/icon/icon.pdf}
+\\[2cm]
+
+\LARGE 3F --- Framework for \textsc{Femm}
+\vfill
+\end{titlepage}
+
+
 \tableofcontents
 
 \chapter{Geometry}
@@ -160,6 +185,8 @@ N. of coils  & $ \Ncoils $ &
 N. of turns per coil & $ \Nturns $ & 
 \texttt{turns} \\
 N. of layers & $ \Nlayers $ & \texttt{layers} \\
+N. of parallel paths & $ \npp $ & \texttt{ppath} \\
+N. of conductors in slot & $ \nc $ & \texttt{nc} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -171,7 +198,72 @@ Typically, given a lamination stack with $ Q $ slots
 so if the number of layers is one, the number of coils is 
 half the number of slots, given the fact that a coil side 
 occupies a full slot.
+\begin{equation*}
+\nc = \Nlayers\,\Nturns
+\end{equation*}
+This equation means that in each slot there are $ \nc $ conductors of 
+any phase due to the turns in each coil side in each layer.
+We bring this number to the equivalent series-connected machine, through the 
+number of parallel paths:
+\begin{equation*}
+\ncs = \frac{\nc}{\npp}
+\end{equation*}
+This number, $ \ncs $, is related to the complete set of slots, while the 
+previous $ \nc $ was related only to a part of them, due to the parallel 
+connection of the winding. Thanks to this fact, we can compute the whole number 
+of conductors for each phase, through
+\begin{equation*}
+\Nc = \frac{Q\,\ncs}{m}
+\end{equation*}
+Therefore the full number of turns for each phase, which will appear in the 
+flux linkage, is $ \Nc/2 $. This number is valid for both the real machine and 
+the equivalent series-connected one.
+
+Another equivalence that we will use is the wye-equivalence. For both the wye 
+and the delta connection of the windings, we will refer to the wye equivalent 
+winding. Each winding sustains either the line(-to-line) voltage in the wye 
+(delta) connection. 
+Therefore
+\begin{align*}
+\Uw &= \frac{U_{\textup{N}}}{\sqrt{3}} \quad[\si{\volt}]	\qquad \text{delta 
+connection} \\[1ex]
+\Uw &= U_{\textup{N}} \quad[\si{\volt}]	\qquad \text{wye connection}
+\end{align*}
+In this way we can obtain the winding current directly from the power
+\[
+\Iw = \frac{P}{3 \Uw\cos\varphi} \quad[\si{\ampere}]
+\]
+and use it as the design current for the winding itself. In fact, if each turn 
+is made by some wires with a full section $ \Sc $, we will refer to the 
+equivalent turn section
+\[
+\Sceq = \npp \Sc \quad [\si{\milli\meter\squared}]
+\]
+which sees the complete winding current, giving the current density
+\[
+J = \frac{\Iw}{\Sceq} \quad [\si{\ampere\per\milli\meter\squared}]
+\]
+It is important to highlight that this current density is the conductor's one, 
+while the slot current density is given by
+\[
+\Jslot = \kfill J \quad [\si{\ampere\per\milli\meter\squared}]
+\]
+where the fill factor, $ \kfill $, represents the ratio between the actual 
+conductor area in the slot and the slot section.
+Depending on the starting point, one can find the rms current in the slot 
+through
+\[
+\Islot = \Jslot \Sslot = \ncs \Iw \quad[\si{\ampere}]
+\]
 
 
+
+\section{Space vectors}
+
+
+\section{Sinusoidal dq control}
+
+
+\section{Trapezoidal control}
 
 \end{document}
