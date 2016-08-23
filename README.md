@@ -1,6 +1,6 @@
 # 3F --- Framework For Femm
 
-![](./3F/more/3F.png height="50")
+<img src="3F/more/3F.png" width="50">
 
 Some drawing and analysis code through FEMM 3.3
 
