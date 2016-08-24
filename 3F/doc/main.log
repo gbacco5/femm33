@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.3.15)  23 AUG 2016 21:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/W32TeX) (preloaded format=pdflatex 2016.3.15)  24 AUG 2016 10:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -129,6 +129,14 @@ File: babel.def 2016/02/24 3.9q Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
+(c:/texlive/2014/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
 (c:/texlive/2014/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
@@ -516,18 +524,18 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
-LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 
 (c:/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -600,12 +608,12 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathsf_int=\count158
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (c:/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (c:/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -616,7 +624,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: ../more/icon/icon.pdf Graphic file (type pdf)
 
 <use ../more/icon/icon.pdf>
-Package pdftex.def Info: ../more/icon/icon.pdf used on input line 40.
+Package pdftex.def Info: ../more/icon/icon.pdf used on input line 49.
 (pdftex.def)             Requested size: 180.0pt x 180.0007pt.
  [1
 
@@ -634,7 +642,7 @@ File: ../examples/slots/squared_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/squared_slot.pdf>
 Package pdftex.def Info: ../examples/slots/squared_slot.pdf used on input line 
-70.
+79.
 (pdftex.def)             Requested size: 39.30334pt x 73.91315pt.
 
 <../examples/slots/rounded_slot.pdf, id=18, 38.9993pt x 73.89633pt>
@@ -642,14 +650,14 @@ File: ../examples/slots/rounded_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/rounded_slot.pdf>
 Package pdftex.def Info: ../examples/slots/rounded_slot.pdf used on input line 
-70.
+79.
 (pdftex.def)             Requested size: 38.99919pt x 73.89613pt.
 
 <../examples/slots/round_slot.pdf, id=19, 39.31654pt x 73.90094pt>
 File: ../examples/slots/round_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/round_slot.pdf>
-Package pdftex.def Info: ../examples/slots/round_slot.pdf used on input line 70
+Package pdftex.def Info: ../examples/slots/round_slot.pdf used on input line 79
 .
 (pdftex.def)             Requested size: 39.31644pt x 73.90074pt.
 
@@ -658,7 +666,7 @@ File: ../examples/slots/semiround_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/semiround_slot.pdf>
 Package pdftex.def Info: ../examples/slots/semiround_slot.pdf used on input lin
-e 70.
+e 79.
 (pdftex.def)             Requested size: 38.29854pt x 73.90402pt.
 
 <../examples/slots/roundsemi_slot.pdf, id=21, 39.29227pt x 73.91333pt>
@@ -666,7 +674,7 @@ File: ../examples/slots/roundsemi_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/roundsemi_slot.pdf>
 Package pdftex.def Info: ../examples/slots/roundsemi_slot.pdf used on input lin
-e 70.
+e 79.
 (pdftex.def)             Requested size: 39.29216pt x 73.91315pt.
 
 <../examples/slots/semiarc_slot.pdf, id=22, 39.25375pt x 74.18025pt>
@@ -674,7 +682,7 @@ File: ../examples/slots/semiarc_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/semiarc_slot.pdf>
 Package pdftex.def Info: ../examples/slots/semiarc_slot.pdf used on input line 
-70.
+79.
 (pdftex.def)             Requested size: 39.25363pt x 74.18005pt.
 
 <../examples/slots/roundarc_slot.pdf, id=23, 39.25221pt x 74.18025pt>
@@ -682,7 +690,7 @@ File: ../examples/slots/roundarc_slot.pdf Graphic file (type pdf)
 
 <use ../examples/slots/roundarc_slot.pdf>
 Package pdftex.def Info: ../examples/slots/roundarc_slot.pdf used on input line
- 70.
+ 79.
 (pdftex.def)             Requested size: 39.2521pt x 74.18005pt.
  [2
 
@@ -714,24 +722,24 @@ clusion: multiple pdfs with page group included in a single page
 File: ../examples/stators/1pole.pdf Graphic file (type pdf)
 
 <use ../examples/stators/1pole.pdf>
-Package pdftex.def Info: ../examples/stators/1pole.pdf used on input line 78.
+Package pdftex.def Info: ../examples/stators/1pole.pdf used on input line 87.
 (pdftex.def)             Requested size: 138.11499pt x 194.0117pt.
 
 <../examples/stators/2pole.pdf, id=37, 405.58517pt x 310.13544pt>
 File: ../examples/stators/2pole.pdf Graphic file (type pdf)
 
 <use ../examples/stators/2pole.pdf>
-Package pdftex.def Info: ../examples/stators/2pole.pdf used on input line 85.
+Package pdftex.def Info: ../examples/stators/2pole.pdf used on input line 94.
 (pdftex.def)             Requested size: 304.18813pt x 232.60098pt.
 
 <../examples/stators/ppole.pdf, id=38, 568.79573pt x 310.12373pt>
 File: ../examples/stators/ppole.pdf Graphic file (type pdf)
 
 <use ../examples/stators/ppole.pdf>
-Package pdftex.def Info: ../examples/stators/ppole.pdf used on input line 92.
+Package pdftex.def Info: ../examples/stators/ppole.pdf used on input line 101.
 (pdftex.def)             Requested size: 426.59575pt x 232.59222pt.
 
-Overfull \hbox (95.59575pt too wide) in paragraph at lines 91--97
+Overfull \hbox (95.59575pt too wide) in paragraph at lines 100--106
 [][]
  []
 
@@ -743,10 +751,11 @@ n: multiple pdfs with page group included in a single page
 File: ../examples/stators/2ppole.pdf Graphic file (type pdf)
 
 <use ../examples/stators/2ppole.pdf>
-Package pdftex.def Info: ../examples/stators/2ppole.pdf used on input line 99.
+Package pdftex.def Info: ../examples/stators/2ppole.pdf used on input line 108.
+
 (pdftex.def)             Requested size: 427.39261pt x 427.39233pt.
 
-Overfull \hbox (96.39261pt too wide) in paragraph at lines 98--104
+Overfull \hbox (96.39261pt too wide) in paragraph at lines 107--113
 [][] 
  []
 
@@ -756,7 +765,7 @@ File: ../examples/magnets/parallel_rect.pdf Graphic file (type pdf)
 
 <use ../examples/magnets/parallel_rect.pdf>
 Package pdftex.def Info: ../examples/magnets/parallel_rect.pdf used on input li
-ne 112.
+ne 121.
 (pdftex.def)             Requested size: 161.57059pt x 36.56955pt.
 
 <../examples/magnets/parallel_trapz.pdf, id=58, 161.57098pt x 36.56966pt>
@@ -764,7 +773,7 @@ File: ../examples/magnets/parallel_trapz.pdf Graphic file (type pdf)
 
 <use ../examples/magnets/parallel_trapz.pdf>
 Package pdftex.def Info: ../examples/magnets/parallel_trapz.pdf used on input l
-ine 120.
+ine 129.
 (pdftex.def)             Requested size: 161.57059pt x 36.56955pt.
 
 <../examples/magnets/radial_trapz.pdf, id=59, 161.57098pt x 36.56976pt>
@@ -772,7 +781,7 @@ File: ../examples/magnets/radial_trapz.pdf Graphic file (type pdf)
 
 <use ../examples/magnets/radial_trapz.pdf>
 Package pdftex.def Info: ../examples/magnets/radial_trapz.pdf used on input lin
-e 128.
+e 137.
 (pdftex.def)             Requested size: 161.57059pt x 36.56966pt.
  [6 <../examples/magnets/parallel_rect.pdf> <../examples/magnets/parallel_trapz
 .pdf
@@ -787,21 +796,21 @@ nclusion: multiple pdfs with page group included in a single page
 File: ../examples/rotors/1pole.pdf Graphic file (type pdf)
 
 <use ../examples/rotors/1pole.pdf>
-Package pdftex.def Info: ../examples/rotors/1pole.pdf used on input line 140.
+Package pdftex.def Info: ../examples/rotors/1pole.pdf used on input line 149.
 (pdftex.def)             Requested size: 94.88284pt x 132.91154pt.
 
 <../examples/rotors/2pole.pdf, id=69, 175.79318pt x 265.42221pt>
 File: ../examples/rotors/2pole.pdf Graphic file (type pdf)
 
 <use ../examples/rotors/2pole.pdf>
-Package pdftex.def Info: ../examples/rotors/2pole.pdf used on input line 147.
+Package pdftex.def Info: ../examples/rotors/2pole.pdf used on input line 156.
 (pdftex.def)             Requested size: 131.84454pt x 199.06616pt.
 
 <../examples/rotors/ppole.pdf, id=70, 328.56544pt x 263.3337pt>
 File: ../examples/rotors/ppole.pdf Graphic file (type pdf)
 
 <use ../examples/rotors/ppole.pdf>
-Package pdftex.def Info: ../examples/rotors/ppole.pdf used on input line 154.
+Package pdftex.def Info: ../examples/rotors/ppole.pdf used on input line 163.
 (pdftex.def)             Requested size: 246.42348pt x 197.49977pt.
  [7 <../examples/rotors/1pole.pdf> <../examples/rotors/2pole.pdf
 
@@ -811,7 +820,7 @@ pdfTeX warning: pdflatex.exe (file ../examples/rotors/2pole.pdf): PDF inclusion
 File: ../examples/rotors/2ppole.pdf Graphic file (type pdf)
 
 <use ../examples/rotors/2ppole.pdf>
-Package pdftex.def Info: ../examples/rotors/2ppole.pdf used on input line 161.
+Package pdftex.def Info: ../examples/rotors/2ppole.pdf used on input line 170.
 (pdftex.def)             Requested size: 263.07828pt x 262.08801pt.
  [8 <../examples/rotors/ppole.pdf> <../examples/rotors/2ppole.pdf
 
@@ -821,28 +830,35 @@ n: multiple pdfs with page group included in a single page
 Chapter 2.
 [9
 
-] [10] (./main.aux) ) 
+] [10] [11] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 13879 strings out of 493033
- 276513 string characters out of 6137754
- 293197 words of memory out of 5000000
- 17278 multiletter control sequences out of 15000+600000
- 13535 words of font info for 52 fonts, out of 8000000 for 9000
+ 13972 strings out of 493033
+ 277451 string characters out of 6137754
+ 296495 words of memory out of 5000000
+ 17356 multiletter control sequences out of 15000+600000
+ 17259 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,14n,42p,10382b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmbx10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2014/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2014/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmtt10.pfb>
-Output written on main.pdf (11 pages, 173823 bytes).
+ 38i,18n,42p,10382b,857s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
+x12.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
+<c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2014/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2014/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pf
+b><c:/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texli
+ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2014/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2014/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2014/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (12 pages, 242100 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 158 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

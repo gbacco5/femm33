@@ -4,6 +4,7 @@
 
 \usepackage[UKenglish]{babel}
 
+\usepackage{bm}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{siunitx}
@@ -29,6 +30,14 @@
 \newcommand{\Islot}{I_{\textup{slot}}}
 \newcommand{\Sslot}{S_{\textup{slot}}}
 
+\newcommand{\eu}{\textrm{e}}
+\newcommand{\je}{\textrm{j}}
+\newcommand{\thh}{\vartheta}
+\newcommand{\thm}{\thh_{\textup{m}}}
+\newcommand{\thme}{\thm^{\textup{e}}}
+
+\newcommand{\sv}[1]{\bm{#1}}
+\renewcommand{\vec}[1]{\overline{#1}}
 
 \title{3F --- Framework for \textsc{Femm}}
 \author{}
@@ -258,7 +267,26 @@ through
 
 
 
-\section{Space vectors}
+\section{Space vector}
+Given an $ m $-phase winding symmetrically distributed, we can associate its 
+currents to a single complex-valued variable, the \emph{space vector}, which 
+represents the equivalent primitive two-phase winding, with axes $ \alpha $ and 
+$ \beta $. Thus
+\[
+\sv{i}_{\alpha\beta} = \frac{2}{m}\,\left[ 
+i_a + i_b\,\eu^{\,\je\frac{2\pi}{m}} + i_c\,\eu^{\,\je\frac{4\pi}{m}} + \ldots
++ i_m\,\eu^{\,\je\frac{(m-1)2\pi}{m}}
+\right] = \sv{i}^s
+\]
+If we want to get the space vector in the synchronous reference frame, it is 
+simply
+\[
+\sv{i}^r = \sv{i}^s\,\eu^{-\je\thme}
+\]
+Therefore we can directly relate the $ dq $-current to the $ m $ phase currents:
+\begin{align*}
+\vec{i}_s \xrightarrow{T_{ab\cdots m}^{dq}} \sv{i}^r
+\end{align*}
 
 
 \section{Sinusoidal dq control}
