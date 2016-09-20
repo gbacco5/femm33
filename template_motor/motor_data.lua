@@ -2,7 +2,7 @@
 -- This file start the drawing of the motor.
 -- '?!' options have already to be implemented.
 -- '<<.>>' labels identify the kind of motors which
--- need that feature.
+-- needs that feature.
 --
 -- bg, 2016/08/15
 -- ****************************************************
@@ -93,7 +93,7 @@ stator = {
 
   -- winding parameters
   winding = {
-    m = 3, --  # oh phases
+    m = 3, --  # of phases
     Q = 36, -- # of stator slots
     chording = 0, -- # of slots chorded
     sequence = {-2,1,-3,2,-1,3},
@@ -291,7 +291,7 @@ stator.mesh = {air = mesh.air}
 -- Simulation -----------------------------------------
 sim = {
   tipo = 'on_load',
-  -- tipology = 'no_load'/'?!on_load'/'?!compute_L'/'?!map'
+  -- tipology = 'no_load'/'on_load'/'?!compute_L'/'?!map'
 
   poles = 1,
   -- either 1, 2, stator.p,2*stator.p, where 2p --> complete
