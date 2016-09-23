@@ -13,6 +13,9 @@
 \usepackage{booktabs}
 \usepackage{caption}
 
+\usepackage{tikz}
+\usetikzlibrary{arrows,backgrounds}
+
 \newcommand{\Ncoils}{N_{\textup{coils}}}
 \newcommand{\Nturns}{N_{\textup{turns}}}
 \newcommand{\Nlayers}{N_{\textup{layers}}}
@@ -27,7 +30,8 @@
 
 \newcommand{\kfill}{k_{\textup{fill}}}
 \newcommand{\Jslot}{J_{\textup{slot}}}
-\newcommand{\Islot}{I_{\textup{slot}}}
+\newcommand{\Islot}[1][]{I_{\textup{slot}#1}}
+\newcommand{\islot}[1][]{\vec{i}_{\textup{slot}#1}}
 \newcommand{\Sslot}{S_{\textup{slot}}}
 
 \newcommand{\eu}{\textrm{e}}
@@ -35,6 +39,7 @@
 \newcommand{\thh}{\vartheta}
 \newcommand{\thm}{\thh_{\textup{m}}}
 \newcommand{\thme}{\thm^{\textup{e}}}
+\newcommand{\alphaie}{\alpha_{\textup{i}}^{\textup{e}}}
 
 \newcommand{\sv}[1]{\bm{#1}}
 \renewcommand{\vec}[1]{\overline{#1}}
@@ -283,15 +288,140 @@ simply
 \[
 \sv{i}^r = \sv{i}^s\,\eu^{-\je\thme}
 \]
-Therefore we can directly relate the $ dq $-current to the $ m $ phase currents:
+Therefore we can directly relate the $ dq $-current to the 
+$ m $ phase currents:%
+\footnote{The adopted convention is the following
+\[
+T\text{ransformation}_{\text{from}}^{\text{to}} \qquad
+U\text{antitransformation}_{\text{from}}^{\text{to}}
+\]%
+}
 \begin{align*}
-\vec{i}_s \xrightarrow{T_{ab\cdots m}^{dq}} \sv{i}^r
+\vec{i}_{\textup{s}} \xrightarrow{T_{ab\cdots m}^{dq}} 
+\sv{i}^r
 \end{align*}
 
 
+\section{Slot matrix}
+The slot matrix is a useful tool for the correct and rapid 
+assignment of currents in the slots. In fact it directly 
+relates phase and slot currents, through
+\[
+\vec{i}_{\textup{s}} \xrightarrow{\;K\;} 
+\vec{i}_{\textup{slot}}
+\]
+This relationships is missing just the number of series 
+conductor per slot. So
+\[
+\vec{i}_{\textup{slot}} = \ncs K \, \vec{i}_s
+\]
+
+
 \section{Sinusoidal dq control}
+For synchronous machines, this is the typical control 
+implemented. A reference current, which comes from the 
+speed loop, is imposed. Usually the control is executed in 
+the $ dq $-reference frame, therefore we start from
+\[
+\sv{i}^r = i_d + \je i_q = |\sv{i}|\,\eu^{\,\je\alphaie}
+\]
+Then we transform it in the $ \alpha\beta $-reference frame 
+and finally we get the phase currents:%
+\footnote{%
+In the code the transformations made available are
+\texttt{dq2ab} and \texttt{U}, which is the one from $ 
+\alpha\beta $ to $ abc\cdots m $.
+}
+\[
+\vec{i}_{\textup{s}} = U_{s}^{ab\cdots m}\sv{i}^s = 
+U_{s}^{ab\cdots m} 
+U_{r}^{s}\,\sv{i}^r = U_{r}^{ab\cdots m}\,\sv{i}^r
+\]
+%
+From here, the slot currents are simply
+\[
+\islot = \ncs K\,\vec{i}_{\textup{s}} = \ncs 
+K\,U_{r}^{ab\cdots 
+m}\,\sv{i}^r
+\]
 
 
 \section{Trapezoidal control}
+This control is typical of BLDC drives.
+In the trapezoidal control the currents would ideally 
+assume just three values:
+\[
+\{ +I_{\textup{DC}},0,-I_{\textup{DC}} \}
+\]
+while the current absorbed from the DC-bus is constant.
+Only two phases are active simultaneously, while the third 
+one is kept off. Taking half the DC-bus voltage as the 
+reference, the voltages assume just three values too:
+\[
+\{ +V_{\textup{DC}}/2,0,-V_{\textup{DC}}/2 \}
+\]
+The complete number of possible states is the double ($ +/- 
+$) of all the grouping of the phases ($ m $) by two:
+\[
+\text{\# of states} = 2\,\binom{m}{2} = m\,(m - 1)
+\]
+Consider a three-phase machine for instance. The supply 
+states can be
+\[
+\begin{array}{rcccc}
+\text{state 6}& \quad &   +   &   -   &   0   \\
+\text{state 1}& \quad &   +   &   0   &   -   \\
+\text{state 2}& \quad &   0   &   +   &   -   \\
+\text{state 3}& \quad &   -   &   +   &   0   \\
+\text{state 4}& \quad &   -   &   0   &   +   \\
+\text{state 5}& \quad &   0   &   -   &   +   
+\end{array}
+\]
+
+\begin{tikzpicture}
+\def \L {20mm};
+
+% draw axis
+\draw[->] (-1.5*\L,0) -- (1.5*\L,0) node[anchor=north] {$ 
+\alpha \equiv a $} ;
+\draw[->] (0,-1.5*\L) -- (0,1.5*\L) node[anchor=east] {$ 
+\beta $} ;
+\draw[->,gray] (120+180:1.5*\L) -- (120:1.5*\L) 
+node[anchor=north] {$ b $} ;
+\draw[->,gray] (240+180:1.5*\L) -- (240:1.5*\L) 
+node[anchor=north] {$ c $} ;
+
+\coordinate (0) at (0,0);
+
+\foreach \i in {1,2,...,6}
+{
+\coordinate (\i) at ({30 + (\i-1)*60}:\L);
+\coordinate (s\i) at ({30 + (\i-1)*60}:1.1*\L);
+\draw[->,purple,very thick] (0) -- (\i) ;
+\node[purple] at (s\i) {\i} ;
+}
+
+\begin{scope}[on background layer]
+\coordinate (a) at ({sqrt(3)/2*\L},0) ;
+\fill[green!10] (0) -- (a) -- (1) -- cycle ;
+\fill[red!10] (0) -- (1) -- (2) -- cycle ;
+\fill[cyan!10] (0) -- (2) -- (3) -- cycle ;
+\fill[yellow!10] (0) -- (3) -- (4) -- cycle ;
+\fill[violet!10] (0) -- (4) -- (5) -- cycle ;
+\fill[orange!10] (0) -- (5) -- (6) -- cycle ;
+\fill[black!10] (0) -- (6) -- (a) -- cycle ;
+
+\node at (barycentric cs:0=1,a=1,1=1) {0};
+\foreach \i in {1,...,5}
+{
+\pgfmathsetmacro \j {int(\i+1)};
+\node at (barycentric cs:0=1,\i=1,\j=1) {\i};
+}
+\node at (barycentric cs:0=1,6=1,a=1) {6};
+
+\draw (1) -- (2) --(3) -- (4) -- (5) -- (6) -- cycle;
+\end{scope}
+
+\end{tikzpicture}
 
 \end{document}
