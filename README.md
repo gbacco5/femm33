@@ -1,3 +1,10 @@
+# DEPRECATED
+
+Have a look at newer versions of FEMM which has many new features.
+
+---------------------------------------
+
+
 # 3F --- Framework For Femm
 
 <img src="3F/more/icon/3F.png" width="256">
